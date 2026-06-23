@@ -78,9 +78,17 @@ Each architecture skill now follows the same gap-closing rules:
 - state assumptions when required inputs are missing
 - mark blockers instead of inventing facts
 - separate evidence, inference, assumption, and gap
+- keep important claims traceable to user facts, artifacts, tool results,
+  external sources, or assumptions
+- include an Evidence Receipt for substantial findings or decisions
+- follow a small verification loop: locate relevant inputs, make the smallest
+  scoped recommendation, verify against evidence and skill boundaries
 - hand off explicitly when another skill owns the main decision
 - use `mournival-architecture` for final evidence acceptance, go/no-go review,
   or productive-use governance of AI-generated architecture artifacts
+
+This borrows the useful Caveman discipline without importing Caveman behavior:
+short scoped changes, proof via receipt, and no unrelated refactors.
 
 Handoff map:
 
