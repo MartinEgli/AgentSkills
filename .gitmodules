@@ -1,3 +1,6 @@
 [submodule "caveman"]
 	path = caveman
 	url = https://github.com/MartinEgli/caveman.git
+[submodule "single-skill-template"]
+	path = single-skill-template
+	url = https://github.com/MartinEgli/single-skill-template.git

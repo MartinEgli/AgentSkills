@@ -5,6 +5,7 @@ Superrepo for agent-related skills.
 ## Submodules
 
 - `caveman` -> `https://github.com/MartinEgli/caveman.git`
+- `single-skill-template` -> `https://github.com/MartinEgli/single-skill-template.git`
 
 ## Clone
 
