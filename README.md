@@ -8,11 +8,11 @@ repository and is included here as a Git submodule.
 | Skill Repo | Codex Skill | Use For | Do Not Use For |
 | --- | --- | --- | --- |
 | `caveman-skill` | `caveman` plus helper skills | Short, token-efficient agent responses and caveman helper workflows | Architecture or security review |
-| `domain-driven-design-skill` | `domain-driven-design` | Deep DDD: bounded contexts, subdomains, context maps, aggregates, domain events, event storming | General software architecture, EA roadmap, security approval, or governance acceptance |
-| `enterprise-architecture-skill` | `enterprise-architecture` | Capability, target architecture, roadmap, portfolio, architecture decisions | Detailed threat/control/security approval, code-level design, or final evidence acceptance |
-| `enterprise-security-architecture-skill` | `enterprise-security-architecture` | Secure design review, threat/risk/control mapping, security target architecture, Clean AI security | General EA strategy, code design, DDD modeling, or final evidence acceptance |
-| `mournival-architecture-skill` | `mournival-architecture` | Four-steward architecture governance review with evidence/risk/value/decision separation | Creating the primary EA, ESA, software, or DDD design |
-| `software-architecture-skill` | `software-architecture` | Software design, DDD handoff, Clean Architecture, Clean Coding, ADRs, integration, Clean AI design | Enterprise portfolio strategy, security approval, deep DDD modeling, or final evidence acceptance |
+| `domain-driven-design-skill` | `domain-driven-design` | Deep DDD: bounded contexts, subdomains, context maps, aggregates, domain events, event storming, DDD diagrams | General software architecture, EA roadmap, security approval, or governance acceptance |
+| `enterprise-architecture-skill` | `enterprise-architecture` | Capability, target architecture, roadmap, portfolio, architecture decisions, EA diagrams | Detailed threat/control/security approval, code-level design, or final evidence acceptance |
+| `enterprise-security-architecture-skill` | `enterprise-security-architecture` | Secure design review, threat/risk/control mapping, security target architecture, Clean AI security, security diagrams | General EA strategy, code design, DDD modeling, or final evidence acceptance |
+| `mournival-architecture-skill` | `mournival-architecture` | Four-steward architecture governance review with evidence/risk/value/decision separation, governance diagrams | Creating the primary EA, ESA, software, or DDD design |
+| `software-architecture-skill` | `software-architecture` | Software design, DDD handoff, Clean Architecture, Clean Coding, ADRs, integration, Clean AI design, software diagrams | Enterprise portfolio strategy, security approval, deep DDD modeling, or final evidence acceptance |
 | `single-skill-template` | `example-skill` | Template for building new single-skill repositories | Real domain work without customization |
 
 ## Reference Map
@@ -88,6 +88,20 @@ Handoff map:
 | `domain-driven-design` | `enterprise-architecture` | Capability model, portfolio, roadmap, operating model |
 | Any architecture skill | `mournival-architecture` | Evidence acceptance, final gate, traceability, productive-use governance, AI-generated claim review |
 
+Diagram scope:
+
+| Skill | Diagram Scope |
+| --- | --- |
+| `enterprise-architecture` | Capability maps, application landscapes, data/integration views, technology landscapes, roadmap diagrams, governance flows, ArchiMate-style enterprise views |
+| `enterprise-security-architecture` | Trust boundaries, security data flows, attack paths without exploit detail, control maps, Zero Trust views, AI security flows |
+| `software-architecture` | C4, sequence, component, deployment, Clean Architecture, API, event, data ownership, and Clean AI software diagrams |
+| `domain-driven-design` | Context maps, subdomain maps, aggregate boundaries, domain event flows, event storming summaries, ubiquitous language maps |
+| `mournival-architecture` | Evidence traceability, role finding flow, decision flow, veto maps, review states, productive-use gates |
+
+Use Mermaid for quick Markdown-native diagrams. Use PlantUML or C4-style
+notation when the diagram should be kept as architecture-as-code or needs a
+stable layered structure.
+
 ### Enterprise Architecture
 
 Use `enterprise-architecture` when the main question is:
@@ -134,6 +148,7 @@ Main modes:
 - `/ea decision`
 - `/ea portfolio`
 - `/ea artifact-map`
+- `/ea diagram`
 
 Output focus:
 
@@ -142,6 +157,7 @@ Output focus:
 - architecture options
 - CSVLOD artifact map
 - EA one-page summary
+- Mermaid, PlantUML, C4, or ArchiMate-style enterprise diagrams
 - roadmap
 - required decisions
 - dependencies and assumptions
@@ -186,6 +202,7 @@ Main modes:
 - `/esa target`
 - `/esa decision`
 - `/esa clean-ai`
+- `/esa diagram`
 
 Output focus:
 
@@ -196,6 +213,7 @@ Output focus:
 - residual risk
 - blocked and allowed next steps
 - AI security boundaries and residual risk
+- Mermaid or PlantUML security diagrams
 
 ### Software Architecture
 
@@ -246,6 +264,7 @@ Main modes:
 - `/sa clean-ai`
 - `/sa adr`
 - `/sa integration`
+- `/sa diagram`
 
 Output focus:
 
@@ -257,6 +276,7 @@ Output focus:
 - integration contracts
 - ADR candidates
 - Clean AI design concerns
+- Mermaid, PlantUML, or C4 software diagrams
 
 ### Domain-Driven Design
 
@@ -301,6 +321,7 @@ Main modes:
 - `/ddd events`
 - `/ddd event-storm`
 - `/ddd review`
+- `/ddd diagram`
 
 Output focus:
 
@@ -311,6 +332,7 @@ Output focus:
 - aggregates and invariants
 - domain events
 - open domain questions
+- Mermaid or PlantUML DDD diagrams
 
 ### Mournival Architecture
 
@@ -378,6 +400,7 @@ Main modes:
 - `/mournival review-artifact`
 - `/mournival final-check`
 - `/mournival clean-ai`
+- `/mournival diagram`
 
 Output focus:
 
@@ -387,6 +410,7 @@ Output focus:
 - human review need
 - blocked next steps
 - consolidated decision
+- Mermaid or PlantUML governance diagrams
 
 ### Caveman
 
