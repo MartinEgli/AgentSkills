@@ -28,15 +28,63 @@ This superrepo is the control repository for agent skill repositories.
 For every meaningful change:
 
 1. Work inside the affected skill repository.
-2. Run that repository's validation and tests when available.
-3. Commit small, coherent changes in the affected repository.
-4. Push the affected repository.
-5. Return to `AgentSkills`.
-6. Update the submodule pointer.
-7. Update `README.md` when a skill, role, mode, trigger, output shape, or usage
+2. Update evidence and traceability rules when the change affects inputs,
+   outputs, claims, decisions, diagrams, roles, modes, or handoffs.
+3. Run that repository's validation and tests when available.
+4. Commit small, coherent changes in the affected repository.
+5. Push the affected repository.
+6. Return to `AgentSkills`.
+7. Update the submodule pointer.
+8. Update `README.md` when a skill, role, mode, trigger, output shape, or usage
    guidance changed.
-8. Commit the superrepo pointer and documentation update.
-9. Push the superrepo.
+9. Commit the superrepo pointer and documentation update.
+10. Push the superrepo.
+
+## Evidence And Traceability Policy
+
+Evidence and traceability are mandatory for all realized skills and templates.
+Every skill must keep its evidence rules current as the skill evolves.
+
+When creating or modifying a skill:
+
+- Keep `SKILL.md` Evidence Handling aligned with the actual inputs, outputs,
+  modes, roles, diagrams, and handoffs.
+- Maintain `references/evidence-traceability.md` when the skill uses or
+  produces findings, recommendations, diagrams, decisions, claims, controls,
+  risks, roadmaps, model elements, code guidance, or governance status.
+- Require important claims to trace back to one of:
+  - user fact
+  - supplied artifact
+  - tool result
+  - external source
+  - clearly marked assumption
+  - explicit gap
+- Do not convert assumptions into evidence.
+- Do not hide missing inputs. Mark them as gaps and state what decision they may
+  change.
+- Preserve source labels, IDs, paths, names, commands, error strings, system
+  names, role names, and domain terms exactly.
+- Include an Evidence Receipt for substantial outputs, reviews, decisions,
+  diagrams, or recommendations.
+- Use the small verification loop: locate relevant inputs, make the smallest
+  scoped change or recommendation, verify against evidence and skill boundaries.
+- Avoid unrelated refactors, extra artifacts, or broad rewrites unless needed
+  for traceability or the requested change.
+
+For templates:
+
+- New template-generated skills must include evidence traceability by default.
+- If the template `SKILL.md` references a traceability file, the scaffold script
+  must create or copy that file.
+- Template changes that affect skill outputs must update the example skill and
+  scaffold behavior together.
+
+For the superrepo:
+
+- `README.md` must stay consistent with skill evidence expectations when a
+  skill's output contract, role, mode, diagram capability, or handoff changes.
+- Submodule pointer updates must only be committed after the affected skill repo
+  has passed validation and its evidence rules are current.
 
 ## Superrepo README Maintenance
 
