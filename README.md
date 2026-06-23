@@ -8,11 +8,11 @@ repository and is included here as a Git submodule.
 | Skill Repo | Codex Skill | Use For | Do Not Use For |
 | --- | --- | --- | --- |
 | `caveman-skill` | `caveman` plus helper skills | Short, token-efficient agent responses and caveman helper workflows | Architecture or security review |
-| `domain-driven-design-skill` | `domain-driven-design` | Deep DDD: bounded contexts, subdomains, context maps, aggregates, domain events, event storming | General software architecture without deep domain modeling |
-| `enterprise-architecture-skill` | `enterprise-architecture` | Capability, target architecture, roadmap, portfolio, architecture decisions | Detailed threat/control/security approval work |
-| `enterprise-security-architecture-skill` | `enterprise-security-architecture` | Secure design review, threat/risk/control mapping, security target architecture | General EA strategy and capability roadmap work |
-| `mournival-architecture-skill` | `mournival-architecture` | Four-steward architecture governance review with evidence/risk/value/decision separation | Simple EA or ESA drafting without review need |
-| `software-architecture-skill` | `software-architecture` | Software design, DDD, Clean Architecture, Clean Coding, ADRs, integration, Clean AI design | Enterprise portfolio strategy or security approval |
+| `domain-driven-design-skill` | `domain-driven-design` | Deep DDD: bounded contexts, subdomains, context maps, aggregates, domain events, event storming | General software architecture, EA roadmap, security approval, or governance acceptance |
+| `enterprise-architecture-skill` | `enterprise-architecture` | Capability, target architecture, roadmap, portfolio, architecture decisions | Detailed threat/control/security approval, code-level design, or final evidence acceptance |
+| `enterprise-security-architecture-skill` | `enterprise-security-architecture` | Secure design review, threat/risk/control mapping, security target architecture, Clean AI security | General EA strategy, code design, DDD modeling, or final evidence acceptance |
+| `mournival-architecture-skill` | `mournival-architecture` | Four-steward architecture governance review with evidence/risk/value/decision separation | Creating the primary EA, ESA, software, or DDD design |
+| `software-architecture-skill` | `software-architecture` | Software design, DDD handoff, Clean Architecture, Clean Coding, ADRs, integration, Clean AI design | Enterprise portfolio strategy, security approval, deep DDD modeling, or final evidence acceptance |
 | `single-skill-template` | `example-skill` | Template for building new single-skill repositories | Real domain work without customization |
 
 ## Reference Map
@@ -61,6 +61,32 @@ How to use references:
   separated before accepting a claim or artifact.
 
 ## How The Skills Differ
+
+## Definition Guardrails
+
+Each architecture skill now follows the same gap-closing rules:
+
+- state assumptions when required inputs are missing
+- mark blockers instead of inventing facts
+- separate evidence, inference, assumption, and gap
+- hand off explicitly when another skill owns the main decision
+- use `mournival-architecture` for final evidence acceptance, go/no-go review,
+  or productive-use governance of AI-generated architecture artifacts
+
+Handoff map:
+
+| From | Hand Off To | When |
+| --- | --- | --- |
+| `enterprise-architecture` | `enterprise-security-architecture` | Threats, controls, data classification, residual risk, security approval |
+| `enterprise-architecture` | `software-architecture` or `domain-driven-design` | Code-level design, service boundaries, Clean Architecture, Clean Coding, deep DDD |
+| `enterprise-security-architecture` | `enterprise-architecture` | Capability, portfolio, roadmap, operating model, general target architecture |
+| `enterprise-security-architecture` | `software-architecture` or `domain-driven-design` | API design, code structure, bounded contexts, aggregates when security is not the main question |
+| `software-architecture` | `enterprise-architecture` | Enterprise capability, portfolio, roadmap, or operating model decisions |
+| `software-architecture` | `enterprise-security-architecture` | Security controls, approval, threat model, high or critical security risk |
+| `software-architecture` | `domain-driven-design` | Deep context mapping, subdomain classification, event storming, aggregate modeling |
+| `domain-driven-design` | `software-architecture` | Deployment, APIs, quality attributes, Clean Architecture, integration design |
+| `domain-driven-design` | `enterprise-architecture` | Capability model, portfolio, roadmap, operating model |
+| Any architecture skill | `mournival-architecture` | Evidence acceptance, final gate, traceability, productive-use governance, AI-generated claim review |
 
 ### Enterprise Architecture
 
@@ -159,6 +185,7 @@ Main modes:
 - `/esa controls`
 - `/esa target`
 - `/esa decision`
+- `/esa clean-ai`
 
 Output focus:
 
@@ -168,6 +195,7 @@ Output focus:
 - controls
 - residual risk
 - blocked and allowed next steps
+- AI security boundaries and residual risk
 
 ### Software Architecture
 
