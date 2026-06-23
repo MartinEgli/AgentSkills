@@ -7,8 +7,10 @@ repository and is included here as a Git submodule.
 
 | Skill Repo | Codex Skill | Use For | Do Not Use For |
 | --- | --- | --- | --- |
+| `azure-architecture-skill` | `azure-architecture` | Azure target architecture, landing zones, Well-Architected review, governance, migration positioning, diagrams, Azure skill routing | Direct deployment, live diagnostics, exact cost queries, .NET code review, or security approval |
 | `caveman-skill` | `caveman` plus helper skills | Short, token-efficient agent responses and caveman helper workflows | Architecture or security review |
 | `domain-driven-design-skill` | `domain-driven-design` | Deep DDD: bounded contexts, subdomains, context maps, aggregates, domain events, event storming, DDD diagrams | General software architecture, EA roadmap, security approval, or governance acceptance |
+| `dotnet-engineering-skill` | `dotnet-engineering` | C#, ASP.NET Core, EF Core, testing, performance, modernization, Azure SDK integration, .NET diagrams | Broad EA, Azure platform architecture, non-.NET architecture, security approval, or final governance |
 | `enterprise-architecture-skill` | `enterprise-architecture` | Capability, target architecture, roadmap, portfolio, architecture decisions, EA diagrams | Detailed threat/control/security approval, code-level design, or final evidence acceptance |
 | `enterprise-security-architecture-skill` | `enterprise-security-architecture` | Secure design review, threat/risk/control mapping, security target architecture, Clean AI security, security diagrams | General EA strategy, code design, DDD modeling, or final evidence acceptance |
 | `mournival-architecture-skill` | `mournival-architecture` | Four-steward architecture governance review with evidence/risk/value/decision separation, governance diagrams | Creating the primary EA, ESA, software, or DDD design |
@@ -36,6 +38,9 @@ as hard rules unless a skill explicitly says so.
 | [NIST SP 800-53 Rev. 5](https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final) | `enterprise-security-architecture` | Security and privacy control catalog. Useful when findings need control families, control intent, and structured control mapping. |
 | [CIS Controls v8.1](https://www.cisecurity.org/controls/v8-1) | `enterprise-security-architecture` | Prioritized security safeguards for practical cyber defense. Useful for concrete control recommendations and implementation-oriented security improvement. |
 | [MITRE ATT&CK Enterprise Matrix](https://attack.mitre.org/matrices/) | `enterprise-security-architecture` | Knowledge base of adversary tactics and techniques. Useful for threat scenarios, detection coverage, attack path thinking, and misuse analysis. |
+| [Azure Well-Architected Framework](https://learn.microsoft.com/azure/well-architected/) | `azure-architecture` | Azure workload architecture guidance across reliability, security, cost optimization, operational excellence, and performance efficiency. |
+| [Microsoft Cloud Adoption Framework for Azure](https://learn.microsoft.com/azure/cloud-adoption-framework/) | `azure-architecture` | Azure adoption and operating model guidance. Useful for landing zones, governance, migration, management, and cloud operating model alignment. |
+| [.NET Documentation](https://learn.microsoft.com/dotnet/) | `dotnet-engineering` | Official Microsoft documentation for .NET, C#, ASP.NET Core, EF Core, diagnostics, performance, testing, and deployment-related engineering practices. |
 
 How to use references:
 
@@ -57,6 +62,10 @@ How to use references:
   controls.
 - Use MITRE ATT&CK when reviewing adversary behavior, threat scenarios, or
   detection gaps.
+- Use Azure WAF and CAF when reviewing Azure target architecture, landing zones,
+  governance, migration, platform operations, or workload architecture.
+- Use .NET documentation when .NET runtime, ASP.NET Core, EF Core, testing,
+  package, or modernization behavior is version-sensitive.
 - Use Mournival when evidence, risk, value, and decision authority must be
   separated before accepting a claim or artifact.
 
@@ -81,6 +90,10 @@ Handoff map:
 | `enterprise-architecture` | `software-architecture` or `domain-driven-design` | Code-level design, service boundaries, Clean Architecture, Clean Coding, deep DDD |
 | `enterprise-security-architecture` | `enterprise-architecture` | Capability, portfolio, roadmap, operating model, general target architecture |
 | `enterprise-security-architecture` | `software-architecture` or `domain-driven-design` | API design, code structure, bounded contexts, aggregates when security is not the main question |
+| `azure-architecture` | Specialized Azure skills | Deployment, validation, diagnostics, cost, RBAC, inventory, service-specific operations |
+| `azure-architecture` | `dotnet-engineering` | .NET code, ASP.NET Core, EF Core, package, test, or Azure SDK implementation details |
+| `dotnet-engineering` | `azure-architecture` | Azure landing zone, hosting topology, networking, governance, platform, or subscription design |
+| `dotnet-engineering` | `software-architecture` | Broad software architecture where .NET-specific details are not the main issue |
 | `software-architecture` | `enterprise-architecture` | Enterprise capability, portfolio, roadmap, or operating model decisions |
 | `software-architecture` | `enterprise-security-architecture` | Security controls, approval, threat model, high or critical security risk |
 | `software-architecture` | `domain-driven-design` | Deep context mapping, subdomain classification, event storming, aggregate modeling |
@@ -94,6 +107,8 @@ Diagram scope:
 | --- | --- |
 | `enterprise-architecture` | Capability maps, application landscapes, data/integration views, technology landscapes, roadmap diagrams, governance flows, ArchiMate-style enterprise views |
 | `enterprise-security-architecture` | Trust boundaries, security data flows, attack paths without exploit detail, control maps, Zero Trust views, AI security flows |
+| `azure-architecture` | Landing zones, management groups, subscriptions, hub-spoke, Private Link, governance, monitoring, migration, and Azure service topology |
+| `dotnet-engineering` | C4, ASP.NET Core request pipeline, EF Core/data access, Clean Architecture, dependency, sequence, and Azure SDK integration diagrams |
 | `software-architecture` | C4, sequence, component, deployment, Clean Architecture, API, event, data ownership, and Clean AI software diagrams |
 | `domain-driven-design` | Context maps, subdomain maps, aggregate boundaries, domain event flows, event storming summaries, ubiquitous language maps |
 | `mournival-architecture` | Evidence traceability, role finding flow, decision flow, veto maps, review states, productive-use gates |
@@ -101,6 +116,117 @@ Diagram scope:
 Use Mermaid for quick Markdown-native diagrams. Use PlantUML or C4-style
 notation when the diagram should be kept as architecture-as-code or needs a
 stable layered structure.
+
+### Azure Architecture
+
+Use `azure-architecture` when the main question is:
+
+```text
+How should this Azure platform or workload architecture be structured, governed,
+reviewed, and routed to execution?
+```
+
+Typical work:
+
+- Azure target architecture
+- landing zone structure
+- management groups and subscriptions
+- hub-spoke, Virtual WAN, Private Link, DNS, ingress, and egress
+- Azure governance, policy, tagging, naming, and RBAC model
+- Azure Well-Architected review
+- Cloud Adoption Framework alignment
+- migration positioning
+- Azure architecture diagrams
+- routing to specialized Azure skills
+
+Example prompts:
+
+```text
+Use azure-architecture /azure landing-zone to design a landing zone for
+regulated production workloads with hub-spoke networking, policy, logging, and
+subscription separation.
+```
+
+```text
+Use azure-architecture /azure route to decide whether this request belongs to
+azure-prepare, azure-deploy, azure-validate, azure-diagnostics, azure-cost, or
+another Azure skill.
+```
+
+Main modes:
+
+- `/azure assess`
+- `/azure target`
+- `/azure landing-zone`
+- `/azure waf`
+- `/azure governance`
+- `/azure migration`
+- `/azure diagram`
+- `/azure route`
+
+Output focus:
+
+- Azure architecture decisions
+- landing zone and governance structure
+- WAF/CAF alignment
+- risks and gaps
+- diagrams
+- execution handoffs
+
+### .NET Engineering
+
+Use `dotnet-engineering` when the main question is:
+
+```text
+How should this .NET system be designed, implemented, tested, modernized, and
+operated?
+```
+
+Typical work:
+
+- C# and .NET review
+- ASP.NET Core, Minimal APIs, Web APIs, Blazor, worker services
+- EF Core and data access
+- dependency injection, options, configuration, logging
+- .NET Clean Architecture
+- unit, integration, contract, and architecture tests
+- performance and diagnostics
+- modernization and package review
+- Azure SDK integration from .NET
+- .NET diagrams
+
+Example prompts:
+
+```text
+Use dotnet-engineering /dotnet api to review this ASP.NET Core API for endpoint
+structure, validation, error handling, DI lifetimes, logging, and tests.
+```
+
+```text
+Use dotnet-engineering /dotnet azure to review this service's Azure SDK,
+managed identity, Key Vault, Service Bus, and observability integration.
+```
+
+Main modes:
+
+- `/dotnet assess`
+- `/dotnet api`
+- `/dotnet data`
+- `/dotnet clean-architecture`
+- `/dotnet testing`
+- `/dotnet performance`
+- `/dotnet upgrade`
+- `/dotnet azure`
+- `/dotnet diagram`
+
+Output focus:
+
+- concrete .NET findings
+- project and package guidance
+- API/data/test/performance recommendations
+- modernization path
+- Azure integration handoffs
+- diagrams
 
 ### Enterprise Architecture
 
@@ -484,6 +610,8 @@ Use this decision guide:
 
 | Need | Skill |
 | --- | --- |
+| Azure landing zone, WAF, governance, Azure architecture routing | `azure-architecture` |
+| .NET, C#, ASP.NET Core, EF Core, tests, performance, modernization | `dotnet-engineering` |
 | Business architecture direction, target state, roadmap | `enterprise-architecture` |
 | Software design, Clean Architecture, Clean Coding | `software-architecture` |
 | Deep DDD, bounded contexts, aggregates, event storming | `domain-driven-design` |
@@ -495,13 +623,17 @@ Use this decision guide:
 If a task crosses skills:
 
 1. Use `enterprise-architecture` for business/target/roadmap structure.
-2. Use `domain-driven-design` for deep domain modeling, bounded contexts,
+2. Use `azure-architecture` for Azure platform, landing zone, governance,
+   workload architecture, and Azure execution routing.
+3. Use `dotnet-engineering` for .NET implementation, ASP.NET Core, EF Core,
+   testing, performance, modernization, and Azure SDK integration.
+4. Use `domain-driven-design` for deep domain modeling, bounded contexts,
    aggregates, event storming, and context maps.
-3. Use `software-architecture` for system/service design, Clean Architecture,
+5. Use `software-architecture` for system/service design, Clean Architecture,
    Clean Coding, integration, ADRs, and Clean AI design boundaries.
-4. Use `enterprise-security-architecture` for security-specific review,
+6. Use `enterprise-security-architecture` for security-specific review,
    controls, and AI security.
-5. Use `mournival-architecture` for final governance decision when evidence,
+7. Use `mournival-architecture` for final governance decision when evidence,
    risk, value, and approval must be separated.
 
 ## Install Examples
@@ -516,6 +648,8 @@ Install all current domain skills:
 
 ```powershell
 npx -y skills add MartinEgli/enterprise-architecture-skill --skill * -a codex --yes
+npx -y skills add MartinEgli/azure-architecture-skill --skill * -a codex --yes
+npx -y skills add MartinEgli/dotnet-engineering-skill --skill * -a codex --yes
 npx -y skills add MartinEgli/domain-driven-design-skill --skill * -a codex --yes
 npx -y skills add MartinEgli/software-architecture-skill --skill * -a codex --yes
 npx -y skills add MartinEgli/enterprise-security-architecture-skill --skill * -a codex --yes
@@ -530,7 +664,9 @@ npx -y skills add MartinEgli/mournival-architecture-skill --skill * -a codex --y
 ## Submodules
 
 - `caveman-skill` -> `https://github.com/MartinEgli/caveman-skill.git`
+- `azure-architecture-skill` -> `https://github.com/MartinEgli/azure-architecture-skill.git`
 - `domain-driven-design-skill` -> `https://github.com/MartinEgli/domain-driven-design-skill.git`
+- `dotnet-engineering-skill` -> `https://github.com/MartinEgli/dotnet-engineering-skill.git`
 - `enterprise-architecture-skill` -> `https://github.com/MartinEgli/enterprise-architecture-skill.git`
 - `enterprise-security-architecture-skill` -> `https://github.com/MartinEgli/enterprise-security-architecture-skill.git`
 - `single-skill-template` -> `https://github.com/MartinEgli/single-skill-template.git`

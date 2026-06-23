@@ -14,7 +14,9 @@ This superrepo is the control repository for agent skill repositories.
 ## Current Submodules
 
 - `caveman-skill`
+- `azure-architecture-skill`
 - `domain-driven-design-skill`
+- `dotnet-engineering-skill`
 - `single-skill-template`
 - `mournival-architecture-skill`
 - `enterprise-architecture-skill`

@@ -19,3 +19,9 @@
 [submodule "domain-driven-design-skill"]
 	path = domain-driven-design-skill
 	url = https://github.com/MartinEgli/domain-driven-design-skill.git
+[submodule "dotnet-engineering-skill"]
+	path = dotnet-engineering-skill
+	url = https://github.com/MartinEgli/dotnet-engineering-skill.git
+[submodule "azure-architecture-skill"]
+	path = azure-architecture-skill
+	url = https://github.com/MartinEgli/azure-architecture-skill.git
