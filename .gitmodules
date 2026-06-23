@@ -4,3 +4,6 @@
 [submodule "single-skill-template"]
 	path = single-skill-template
 	url = https://github.com/MartinEgli/single-skill-template.git
+[submodule "mournival-architecture-skill"]
+	path = mournival-architecture-skill
+	url = https://github.com/MartinEgli/mournival-architecture-skill.git
