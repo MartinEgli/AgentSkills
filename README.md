@@ -22,6 +22,8 @@ as hard rules unless a skill explicitly says so.
 | --- | --- | --- |
 | [TOGAF Standard, 10th Edition](https://www.opengroup.org/togaf-standard-10th-edition-downloads) | `enterprise-architecture` | Enterprise Architecture standard from The Open Group. Useful for architecture development method, governance, views, architecture practice, and target/transition thinking. |
 | [ArchiMate 3.2 Specification](https://www.opengroup.org/sites/default/files/docs/downloads/n221p.pdf) | `enterprise-architecture` | Open modeling language for describing business, application, data, technology, motivation, implementation, and migration relationships. Useful when outputs should map to architecture models. |
+| [Enterprise Architecture on a Single Page](https://kotusev.com/Enterprise%20Architecture%20on%20a%20Single%20Page.pdf) | `enterprise-architecture` | Compact view of EA artifacts around the CSVLOD model. Useful for stakeholder-friendly one-page EA summaries and checking whether the minimum useful artifact set is visible. |
+| [CSVLOD model of Enterprise Architecture](https://www.bcs.org/media/3787/csvlod.pdf) | `enterprise-architecture` | Taxonomy for EA artifacts: Considerations, Standards, Visions, Landscapes, Outlines, and Designs. Useful for selecting artifacts by purpose instead of producing documents by habit. |
 | [SABSA Executive Summary](https://sabsa.org/sabsa-executive-summary/) | `enterprise-security-architecture` | Business-driven security architecture method. Useful for linking security requirements, risks, controls, and architecture decisions back to business objectives. |
 | [NIST Cybersecurity Framework 2.0](https://www.nist.gov/cyberframework) | `enterprise-security-architecture` | Outcome-oriented cybersecurity risk framework. Useful for communicating security posture and governance across Govern, Identify, Protect, Detect, Respond, and Recover outcomes. |
 | [NIST SP 800-207 Zero Trust Architecture](https://csrc.nist.gov/pubs/sp/800/207/final) | `enterprise-security-architecture` | Zero Trust architecture guidance. Useful for identity, resource-centric access, policy decision/enforcement points, and moving away from implicit network trust. |
@@ -33,6 +35,9 @@ How to use references:
 
 - Use TOGAF and ArchiMate when the question is architecture structure,
   lifecycle, modeling, governance, or roadmap.
+- Use EA on a Single Page and CSVLOD when the question is which EA artifacts are
+  needed, how to summarize EA for stakeholders, or whether the EA repository is
+  balanced and useful.
 - Use SABSA when security must trace back to business goals and risk.
 - Use NIST CSF when the output must communicate cybersecurity outcomes or
   governance posture.
@@ -64,6 +69,8 @@ Typical work:
 - transition roadmap
 - architecture principles
 - architecture decision recommendations
+- EA on one page summaries
+- CSVLOD artifact selection or quality checks
 - stakeholder and management summaries
 
 Example prompts:
@@ -78,6 +85,11 @@ Use enterprise-architecture to review this application portfolio for duplicate
 capabilities, lifecycle risk, strategic fit, and rationalization options.
 ```
 
+```text
+Use enterprise-architecture /ea artifact-map to select the minimum useful EA
+artifacts using CSVLOD and produce an EA on one page summary.
+```
+
 Main modes:
 
 - `/ea assess`
@@ -85,12 +97,15 @@ Main modes:
 - `/ea roadmap`
 - `/ea decision`
 - `/ea portfolio`
+- `/ea artifact-map`
 
 Output focus:
 
 - business outcome
 - capability impact
 - architecture options
+- CSVLOD artifact map
+- EA one-page summary
 - roadmap
 - required decisions
 - dependencies and assumptions
