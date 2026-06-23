@@ -27,8 +27,44 @@ For every meaningful change:
 4. Push the affected repository.
 5. Return to `AgentSkills`.
 6. Update the submodule pointer.
-7. Commit the superrepo pointer update.
-8. Push the superrepo.
+7. Update `README.md` when a skill, role, mode, trigger, output shape, or usage
+   guidance changed.
+8. Commit the superrepo pointer and documentation update.
+9. Push the superrepo.
+
+## Superrepo README Maintenance
+
+`README.md` is the human catalog for all skills in this superrepo. It must be
+updated whenever:
+
+- a new skill repository is added
+- a skill repository is renamed
+- a skill is removed
+- a skill gets new or renamed modes
+- a skill gets new or changed roles
+- a skill trigger or intended use changes
+- a skill output contract changes
+- a skill's boundary or "do not use" guidance changes
+
+Each skill entry in `README.md` must show:
+
+- repository name and GitHub URL
+- Codex skill name
+- what the skill is for
+- what the skill is not for
+- example prompts
+- main modes or commands
+- roles, if the skill has roles
+- output focus
+- how it differs from nearby or overlapping skills
+- install command when useful
+
+When updating README examples:
+
+- keep prompts copy-pasteable
+- show at least one realistic usage example per skill
+- explain cross-skill handoff when two skills overlap
+- keep role descriptions short and operational
 
 ## Granular Commit Rules
 

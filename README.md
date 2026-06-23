@@ -1,6 +1,279 @@
 # AgentSkills
 
-Superrepo for agent-related skills.
+Superrepo for agent-related skills. Each skill lives in its own GitHub
+repository and is included here as a Git submodule.
+
+## Skill Catalog
+
+| Skill Repo | Codex Skill | Use For | Do Not Use For |
+| --- | --- | --- | --- |
+| `caveman-skill` | `caveman` plus helper skills | Short, token-efficient agent responses and caveman helper workflows | Architecture or security review |
+| `enterprise-architecture-skill` | `enterprise-architecture` | Capability, target architecture, roadmap, portfolio, architecture decisions | Detailed threat/control/security approval work |
+| `enterprise-security-architecture-skill` | `enterprise-security-architecture` | Secure design review, threat/risk/control mapping, security target architecture | General EA strategy and capability roadmap work |
+| `mournival-architecture-skill` | `mournival-architecture` | Four-steward architecture governance review with evidence/risk/value/decision separation | Simple EA or ESA drafting without review need |
+| `single-skill-template` | `example-skill` | Template for building new single-skill repositories | Real domain work without customization |
+
+## How The Skills Differ
+
+### Enterprise Architecture
+
+Use `enterprise-architecture` when the main question is:
+
+```text
+What should the enterprise architecture be, why, and how do we get there?
+```
+
+Typical work:
+
+- business capability mapping
+- current state vs target state
+- application and data landscape review
+- portfolio rationalization
+- transition roadmap
+- architecture principles
+- architecture decision recommendations
+- stakeholder and management summaries
+
+Example prompts:
+
+```text
+Use enterprise-architecture to assess this target architecture and produce
+current state, target state, gaps, roadmap, risks, and required decisions.
+```
+
+```text
+Use enterprise-architecture to review this application portfolio for duplicate
+capabilities, lifecycle risk, strategic fit, and rationalization options.
+```
+
+Main modes:
+
+- `/ea assess`
+- `/ea target`
+- `/ea roadmap`
+- `/ea decision`
+- `/ea portfolio`
+
+Output focus:
+
+- business outcome
+- capability impact
+- architecture options
+- roadmap
+- required decisions
+- dependencies and assumptions
+
+### Enterprise Security Architecture
+
+Use `enterprise-security-architecture` when the main question is:
+
+```text
+Is this architecture secure enough, what can go wrong, and which controls are
+required?
+```
+
+Typical work:
+
+- secure design review
+- threat and misuse analysis
+- trust boundary review
+- identity and access architecture
+- data protection architecture
+- control mapping
+- residual risk
+- security approval conditions
+
+Example prompts:
+
+```text
+Use enterprise-security-architecture to review this customer API design for
+threats, trust boundaries, controls, residual risk, and approval conditions.
+```
+
+```text
+Use enterprise-security-architecture to create a security target architecture
+for this cloud platform design.
+```
+
+Main modes:
+
+- `/esa review`
+- `/esa threat`
+- `/esa controls`
+- `/esa target`
+- `/esa decision`
+
+Output focus:
+
+- assets and data classification
+- trust boundaries
+- threats and risks
+- controls
+- residual risk
+- blocked and allowed next steps
+
+### Mournival Architecture
+
+Use `mournival-architecture` when the main question is:
+
+```text
+Can this claim, artifact, contradiction, or candidate safely become accepted
+architecture knowledge?
+```
+
+It is a governance and review skill with four steward roles:
+
+| Role | Main Question | Veto Strength |
+| --- | --- | --- |
+| Architecture Assurance Steward | Is it evidenced and traceable? | Strongest |
+| Architecture Risk Steward | What can go wrong? | Strong |
+| Architecture Decision Steward | What must happen next? | Strong |
+| Architecture Value Steward | Is it understandable and useful? | Usually soft veto |
+
+Important: the skill evaluates internally in this order:
+
+1. Assurance
+2. Risk
+3. Value
+4. Decision
+
+But outputs in this order:
+
+1. Decision Steward Review
+2. Risk Steward Review
+3. Value Steward Review
+4. Assurance Steward Review
+5. Consolidated Mournival Decision
+
+Example prompts:
+
+```text
+Use mournival-architecture to review this Knowledge Claim Candidate for
+evidence, traceability, risk, value, and final decision.
+```
+
+```text
+Use mournival-architecture to review this contradiction and decide whether it
+needs ADR, context split, rework, or Human Architect review.
+```
+
+Main modes:
+
+- `/mournival review-claim`
+- `/mournival review-dirty-information`
+- `/mournival review-contradiction`
+- `/mournival review-artifact`
+- `/mournival final-check`
+
+Output focus:
+
+- separate steward reviews
+- hard vetoes
+- evidence gaps
+- human review need
+- blocked next steps
+- consolidated decision
+
+### Caveman
+
+Use `caveman` when the main question is:
+
+```text
+Can the agent answer with fewer tokens while keeping technical accuracy?
+```
+
+Typical work:
+
+- terse answers
+- short commit help
+- short review comments
+- token-saving communication mode
+- file compression helper workflows
+
+Example prompts:
+
+```text
+caveman mode
+```
+
+```text
+Use caveman-review to write short PR review comments.
+```
+
+Installed skills from this repo include:
+
+- `caveman`
+- `cavecrew`
+- `caveman-commit`
+- `caveman-compress`
+- `caveman-help`
+- `caveman-review`
+- `caveman-stats`
+
+Output focus:
+
+- brevity
+- technical accuracy
+- minimal filler
+
+### Single Skill Template
+
+Use `single-skill-template` when creating a new skill repository.
+
+Example prompts:
+
+```text
+Use single-skill-template as the base for a new architecture skill repo.
+```
+
+```text
+Create a new <topic>-skill repo from single-skill-template and add it to
+AgentSkills as a submodule.
+```
+
+Template provides:
+
+- `SKILL.md` structure
+- references/assets/examples pattern
+- validation script
+- package script
+- GitHub Actions validation
+- install documentation
+
+## Choosing The Right Skill
+
+Use this decision guide:
+
+| Need | Skill |
+| --- | --- |
+| Business architecture direction, target state, roadmap | `enterprise-architecture` |
+| Security design, threats, controls, residual risk | `enterprise-security-architecture` |
+| Evidence/risk/value/decision governance review | `mournival-architecture` |
+| Shorter agent communication | `caveman` |
+| Build a new skill repo | `single-skill-template` |
+
+If a task crosses skills:
+
+1. Use `enterprise-architecture` for business/target/roadmap structure.
+2. Use `enterprise-security-architecture` for security-specific review.
+3. Use `mournival-architecture` for final governance decision when evidence,
+   risk, value, and approval must be separated.
+
+## Install Examples
+
+Install one skill for Codex:
+
+```powershell
+npx -y skills add MartinEgli/enterprise-architecture-skill --skill * -a codex --yes
+```
+
+Install all current domain skills:
+
+```powershell
+npx -y skills add MartinEgli/enterprise-architecture-skill --skill * -a codex --yes
+npx -y skills add MartinEgli/enterprise-security-architecture-skill --skill * -a codex --yes
+npx -y skills add MartinEgli/mournival-architecture-skill --skill * -a codex --yes
+```
 
 ## Docs
 
@@ -18,7 +291,7 @@ Superrepo for agent-related skills.
 ## Clone
 
 ```powershell
-git clone --recurse-submodules <repo-url>
+git clone --recurse-submodules https://github.com/MartinEgli/AgentSkills.git
 ```
 
 ## Update Submodules
