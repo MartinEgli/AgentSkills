@@ -2,6 +2,11 @@
 
 Superrepo for agent-related skills.
 
+## Docs
+
+- [Codex Skill Files](docs/codex-skill-files.md): minimum files Codex needs,
+  optional quality structure, install pattern, and validation standard.
+
 ## Submodules
 
 - `caveman-skill` -> `https://github.com/MartinEgli/caveman-skill.git`
