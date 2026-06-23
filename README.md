@@ -10,6 +10,8 @@ Superrepo for agent-related skills.
 ## Submodules
 
 - `caveman-skill` -> `https://github.com/MartinEgli/caveman-skill.git`
+- `enterprise-architecture-skill` -> `https://github.com/MartinEgli/enterprise-architecture-skill.git`
+- `enterprise-security-architecture-skill` -> `https://github.com/MartinEgli/enterprise-security-architecture-skill.git`
 - `single-skill-template` -> `https://github.com/MartinEgli/single-skill-template.git`
 - `mournival-architecture-skill` -> `https://github.com/MartinEgli/mournival-architecture-skill.git`
 

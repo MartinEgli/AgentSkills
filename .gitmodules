@@ -7,3 +7,9 @@
 [submodule "mournival-architecture-skill"]
 	path = mournival-architecture-skill
 	url = https://github.com/MartinEgli/mournival-architecture-skill.git
+[submodule "enterprise-security-architecture-skill"]
+	path = enterprise-security-architecture-skill
+	url = https://github.com/MartinEgli/enterprise-security-architecture-skill.git
+[submodule "enterprise-architecture-skill"]
+	path = enterprise-architecture-skill
+	url = https://github.com/MartinEgli/enterprise-architecture-skill.git
