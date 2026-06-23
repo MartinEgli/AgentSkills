@@ -16,6 +16,9 @@ This superrepo is the control repository for agent skill repositories.
 - `caveman-skill`
 - `single-skill-template`
 - `mournival-architecture-skill`
+- `enterprise-architecture-skill`
+- `enterprise-security-architecture-skill`
+- `software-architecture-skill`
 
 ## Default Workflow
 

@@ -13,3 +13,6 @@
 [submodule "enterprise-architecture-skill"]
 	path = enterprise-architecture-skill
 	url = https://github.com/MartinEgli/enterprise-architecture-skill.git
+[submodule "software-architecture-skill"]
+	path = software-architecture-skill
+	url = https://github.com/MartinEgli/software-architecture-skill.git

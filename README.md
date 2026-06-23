@@ -11,6 +11,7 @@ repository and is included here as a Git submodule.
 | `enterprise-architecture-skill` | `enterprise-architecture` | Capability, target architecture, roadmap, portfolio, architecture decisions | Detailed threat/control/security approval work |
 | `enterprise-security-architecture-skill` | `enterprise-security-architecture` | Secure design review, threat/risk/control mapping, security target architecture | General EA strategy and capability roadmap work |
 | `mournival-architecture-skill` | `mournival-architecture` | Four-steward architecture governance review with evidence/risk/value/decision separation | Simple EA or ESA drafting without review need |
+| `software-architecture-skill` | `software-architecture` | Software design, DDD, Clean Architecture, Clean Coding, ADRs, integration, Clean AI design | Enterprise portfolio strategy or security approval |
 | `single-skill-template` | `example-skill` | Template for building new single-skill repositories | Real domain work without customization |
 
 ## Reference Map
@@ -24,6 +25,10 @@ as hard rules unless a skill explicitly says so.
 | [ArchiMate 3.2 Specification](https://www.opengroup.org/sites/default/files/docs/downloads/n221p.pdf) | `enterprise-architecture` | Open modeling language for describing business, application, data, technology, motivation, implementation, and migration relationships. Useful when outputs should map to architecture models. |
 | [Enterprise Architecture on a Single Page](https://kotusev.com/Enterprise%20Architecture%20on%20a%20Single%20Page.pdf) | `enterprise-architecture` | Compact view of EA artifacts around the CSVLOD model. Useful for stakeholder-friendly one-page EA summaries and checking whether the minimum useful artifact set is visible. |
 | [CSVLOD model of Enterprise Architecture](https://www.bcs.org/media/3787/csvlod.pdf) | `enterprise-architecture` | Taxonomy for EA artifacts: Considerations, Standards, Visions, Landscapes, Outlines, and Designs. Useful for selecting artifacts by purpose instead of producing documents by habit. |
+| [Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) | `software-architecture` | Software design principle set focused on dependency direction and separating business rules from frameworks, UI, databases, and external services. |
+| [Clean Code](https://www.informit.com/imprint/series_detail.aspx?ser=348084&sorttype=0) | `software-architecture` | Maintainability discipline for code readability, naming, small functions, tests, clear dependencies, and reducing avoidable complexity. |
+| [Domain-Driven Design resources](https://www.domainlanguage.com/ddd/) | `software-architecture` | Strategic and tactical design approach for complex domains: ubiquitous language, bounded contexts, aggregates, domain events, and context maps. |
+| [NIST AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework) | `software-architecture`, `enterprise-security-architecture`, `mournival-architecture` | AI risk management reference for trustworthy AI concerns. Useful for Clean AI checks around accountability, transparency, evaluation, data risk, and human oversight. |
 | [SABSA Executive Summary](https://sabsa.org/sabsa-executive-summary/) | `enterprise-security-architecture` | Business-driven security architecture method. Useful for linking security requirements, risks, controls, and architecture decisions back to business objectives. |
 | [NIST Cybersecurity Framework 2.0](https://www.nist.gov/cyberframework) | `enterprise-security-architecture` | Outcome-oriented cybersecurity risk framework. Useful for communicating security posture and governance across Govern, Identify, Protect, Detect, Respond, and Recover outcomes. |
 | [NIST SP 800-207 Zero Trust Architecture](https://csrc.nist.gov/pubs/sp/800/207/final) | `enterprise-security-architecture` | Zero Trust architecture guidance. Useful for identity, resource-centric access, policy decision/enforcement points, and moving away from implicit network trust. |
@@ -38,6 +43,10 @@ How to use references:
 - Use EA on a Single Page and CSVLOD when the question is which EA artifacts are
   needed, how to summarize EA for stakeholders, or whether the EA repository is
   balanced and useful.
+- Use Clean Architecture, Clean Code, and DDD when the question is software
+  structure, service boundaries, code maintainability, or domain modeling.
+- Use NIST AI RMF when Clean AI concerns involve AI risk, accountability,
+  evaluation, transparency, human control, or governance.
 - Use SABSA when security must trace back to business goals and risk.
 - Use NIST CSF when the output must communicate cybersecurity outcomes or
   governance posture.
@@ -159,6 +168,67 @@ Output focus:
 - residual risk
 - blocked and allowed next steps
 
+### Software Architecture
+
+Use `software-architecture` when the main question is:
+
+```text
+How should this software system be structured, integrated, tested, and evolved?
+```
+
+Typical work:
+
+- service and module boundaries
+- Domain-Driven Design
+- Clean Architecture
+- Clean Coding review
+- ADRs
+- API and event design
+- data ownership
+- quality attributes
+- Clean AI design boundaries
+
+Example prompts:
+
+```text
+Use software-architecture /sa ddd to identify bounded contexts, aggregates,
+domain events, context map, and service boundaries for this domain.
+```
+
+```text
+Use software-architecture /sa clean-architecture to review this service design
+for dependency direction, use cases, ports/adapters, and infrastructure
+isolation.
+```
+
+```text
+Use software-architecture /sa clean-ai to review this AI-enabled workflow for
+prompt/model/tool boundaries, evaluation, fallback, observability, and human
+control.
+```
+
+Main modes:
+
+- `/sa design`
+- `/sa review`
+- `/sa ddd`
+- `/sa clean-architecture`
+- `/sa clean-coding`
+- `/sa clean-ai`
+- `/sa adr`
+- `/sa integration`
+
+Output focus:
+
+- domain and use cases
+- bounded contexts
+- module/service boundaries
+- Clean Architecture dependency rule
+- code maintainability findings
+- integration contracts
+- ADR candidates
+- Clean AI design concerns
+
 ### Mournival Architecture
 
 Use `mournival-architecture` when the main question is:
@@ -211,6 +281,7 @@ Main modes:
 - `/mournival review-contradiction`
 - `/mournival review-artifact`
 - `/mournival final-check`
+- `/mournival clean-ai`
 
 Output focus:
 
@@ -294,6 +365,7 @@ Use this decision guide:
 | Need | Skill |
 | --- | --- |
 | Business architecture direction, target state, roadmap | `enterprise-architecture` |
+| Software design, DDD, Clean Architecture, Clean Coding | `software-architecture` |
 | Security design, threats, controls, residual risk | `enterprise-security-architecture` |
 | Evidence/risk/value/decision governance review | `mournival-architecture` |
 | Shorter agent communication | `caveman` |
@@ -302,8 +374,11 @@ Use this decision guide:
 If a task crosses skills:
 
 1. Use `enterprise-architecture` for business/target/roadmap structure.
-2. Use `enterprise-security-architecture` for security-specific review.
-3. Use `mournival-architecture` for final governance decision when evidence,
+2. Use `software-architecture` for system/service design, DDD, Clean
+   Architecture, Clean Coding, and Clean AI design boundaries.
+3. Use `enterprise-security-architecture` for security-specific review,
+   controls, and AI security.
+4. Use `mournival-architecture` for final governance decision when evidence,
    risk, value, and approval must be separated.
 
 ## Install Examples
@@ -318,6 +393,7 @@ Install all current domain skills:
 
 ```powershell
 npx -y skills add MartinEgli/enterprise-architecture-skill --skill * -a codex --yes
+npx -y skills add MartinEgli/software-architecture-skill --skill * -a codex --yes
 npx -y skills add MartinEgli/enterprise-security-architecture-skill --skill * -a codex --yes
 npx -y skills add MartinEgli/mournival-architecture-skill --skill * -a codex --yes
 ```
@@ -334,6 +410,7 @@ npx -y skills add MartinEgli/mournival-architecture-skill --skill * -a codex --y
 - `enterprise-security-architecture-skill` -> `https://github.com/MartinEgli/enterprise-security-architecture-skill.git`
 - `single-skill-template` -> `https://github.com/MartinEgli/single-skill-template.git`
 - `mournival-architecture-skill` -> `https://github.com/MartinEgli/mournival-architecture-skill.git`
+- `software-architecture-skill` -> `https://github.com/MartinEgli/software-architecture-skill.git`
 
 ## Clone
 
