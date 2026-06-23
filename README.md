@@ -337,6 +337,19 @@ Important: the skill evaluates internally in this order:
 3. Value
 4. Decision
 
+Role collaboration:
+
+- Assurance determines what can be treated as evidence.
+- Risk evaluates material harm, misuse, compliance, security, and semantic
+  drift based on evidence, assumptions, and gaps.
+- Value checks usability and stakeholder clarity without weakening evidence or
+  hiding risk.
+- Decision consolidates the result into allowed next steps, blocked next steps,
+  required actions, and final status.
+- Decision must not override Assurance or Risk vetoes; unresolved disagreement
+  remains visible and the stricter evidence or risk position controls
+  productive-use status.
+
 But outputs in this order:
 
 1. Decision Steward Review
