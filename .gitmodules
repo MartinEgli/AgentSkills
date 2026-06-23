@@ -16,3 +16,6 @@
 [submodule "software-architecture-skill"]
 	path = software-architecture-skill
 	url = https://github.com/MartinEgli/software-architecture-skill.git
+[submodule "domain-driven-design-skill"]
+	path = domain-driven-design-skill
+	url = https://github.com/MartinEgli/domain-driven-design-skill.git

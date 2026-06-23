@@ -8,6 +8,7 @@ repository and is included here as a Git submodule.
 | Skill Repo | Codex Skill | Use For | Do Not Use For |
 | --- | --- | --- | --- |
 | `caveman-skill` | `caveman` plus helper skills | Short, token-efficient agent responses and caveman helper workflows | Architecture or security review |
+| `domain-driven-design-skill` | `domain-driven-design` | Deep DDD: bounded contexts, subdomains, context maps, aggregates, domain events, event storming | General software architecture without deep domain modeling |
 | `enterprise-architecture-skill` | `enterprise-architecture` | Capability, target architecture, roadmap, portfolio, architecture decisions | Detailed threat/control/security approval work |
 | `enterprise-security-architecture-skill` | `enterprise-security-architecture` | Secure design review, threat/risk/control mapping, security target architecture | General EA strategy and capability roadmap work |
 | `mournival-architecture-skill` | `mournival-architecture` | Four-steward architecture governance review with evidence/risk/value/decision separation | Simple EA or ESA drafting without review need |
@@ -27,7 +28,7 @@ as hard rules unless a skill explicitly says so.
 | [CSVLOD model of Enterprise Architecture](https://www.bcs.org/media/3787/csvlod.pdf) | `enterprise-architecture` | Taxonomy for EA artifacts: Considerations, Standards, Visions, Landscapes, Outlines, and Designs. Useful for selecting artifacts by purpose instead of producing documents by habit. |
 | [Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) | `software-architecture` | Software design principle set focused on dependency direction and separating business rules from frameworks, UI, databases, and external services. |
 | [Clean Code](https://www.informit.com/imprint/series_detail.aspx?ser=348084&sorttype=0) | `software-architecture` | Maintainability discipline for code readability, naming, small functions, tests, clear dependencies, and reducing avoidable complexity. |
-| [Domain-Driven Design resources](https://www.domainlanguage.com/ddd/) | `software-architecture` | Strategic and tactical design approach for complex domains: ubiquitous language, bounded contexts, aggregates, domain events, and context maps. |
+| [Domain-Driven Design resources](https://www.domainlanguage.com/ddd/) | `domain-driven-design`, `software-architecture` | Strategic and tactical design approach for complex domains: ubiquitous language, bounded contexts, aggregates, domain events, and context maps. Use DDD skill for deep modeling; use Software Architecture for broader system design. |
 | [NIST AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework) | `software-architecture`, `enterprise-security-architecture`, `mournival-architecture` | AI risk management reference for trustworthy AI concerns. Useful for Clean AI checks around accountability, transparency, evaluation, data risk, and human oversight. |
 | [SABSA Executive Summary](https://sabsa.org/sabsa-executive-summary/) | `enterprise-security-architecture` | Business-driven security architecture method. Useful for linking security requirements, risks, controls, and architecture decisions back to business objectives. |
 | [NIST Cybersecurity Framework 2.0](https://www.nist.gov/cyberframework) | `enterprise-security-architecture` | Outcome-oriented cybersecurity risk framework. Useful for communicating security posture and governance across Govern, Identify, Protect, Detect, Respond, and Recover outcomes. |
@@ -179,7 +180,7 @@ How should this software system be structured, integrated, tested, and evolved?
 Typical work:
 
 - service and module boundaries
-- Domain-Driven Design
+- lightweight Domain-Driven Design handoff
 - Clean Architecture
 - Clean Coding review
 - ADRs
@@ -228,6 +229,60 @@ Output focus:
 - integration contracts
 - ADR candidates
 - Clean AI design concerns
+
+### Domain-Driven Design
+
+Use `domain-driven-design` when the main question is:
+
+```text
+What are the right domain boundaries, language, aggregates, events, and context
+relationships?
+```
+
+Typical work:
+
+- ubiquitous language
+- subdomain classification
+- bounded contexts
+- context maps
+- aggregate design
+- domain events
+- event storming
+- legacy decomposition
+- DDD review of service splits
+
+Example prompts:
+
+```text
+Use domain-driven-design /ddd context-map to identify bounded contexts,
+upstream/downstream relationships, anti-corruption layers, and integration
+risks for this domain.
+```
+
+```text
+Use domain-driven-design /ddd aggregate to design aggregates, invariants,
+commands, and domain events for this order management process.
+```
+
+Main modes:
+
+- `/ddd discover`
+- `/ddd context-map`
+- `/ddd subdomains`
+- `/ddd aggregate`
+- `/ddd events`
+- `/ddd event-storm`
+- `/ddd review`
+
+Output focus:
+
+- domain terms
+- bounded contexts
+- context relationships
+- subdomain type
+- aggregates and invariants
+- domain events
+- open domain questions
 
 ### Mournival Architecture
 
@@ -365,7 +420,8 @@ Use this decision guide:
 | Need | Skill |
 | --- | --- |
 | Business architecture direction, target state, roadmap | `enterprise-architecture` |
-| Software design, DDD, Clean Architecture, Clean Coding | `software-architecture` |
+| Software design, Clean Architecture, Clean Coding | `software-architecture` |
+| Deep DDD, bounded contexts, aggregates, event storming | `domain-driven-design` |
 | Security design, threats, controls, residual risk | `enterprise-security-architecture` |
 | Evidence/risk/value/decision governance review | `mournival-architecture` |
 | Shorter agent communication | `caveman` |
@@ -374,11 +430,13 @@ Use this decision guide:
 If a task crosses skills:
 
 1. Use `enterprise-architecture` for business/target/roadmap structure.
-2. Use `software-architecture` for system/service design, DDD, Clean
-   Architecture, Clean Coding, and Clean AI design boundaries.
-3. Use `enterprise-security-architecture` for security-specific review,
+2. Use `domain-driven-design` for deep domain modeling, bounded contexts,
+   aggregates, event storming, and context maps.
+3. Use `software-architecture` for system/service design, Clean Architecture,
+   Clean Coding, integration, ADRs, and Clean AI design boundaries.
+4. Use `enterprise-security-architecture` for security-specific review,
    controls, and AI security.
-4. Use `mournival-architecture` for final governance decision when evidence,
+5. Use `mournival-architecture` for final governance decision when evidence,
    risk, value, and approval must be separated.
 
 ## Install Examples
@@ -393,6 +451,7 @@ Install all current domain skills:
 
 ```powershell
 npx -y skills add MartinEgli/enterprise-architecture-skill --skill * -a codex --yes
+npx -y skills add MartinEgli/domain-driven-design-skill --skill * -a codex --yes
 npx -y skills add MartinEgli/software-architecture-skill --skill * -a codex --yes
 npx -y skills add MartinEgli/enterprise-security-architecture-skill --skill * -a codex --yes
 npx -y skills add MartinEgli/mournival-architecture-skill --skill * -a codex --yes
@@ -406,6 +465,7 @@ npx -y skills add MartinEgli/mournival-architecture-skill --skill * -a codex --y
 ## Submodules
 
 - `caveman-skill` -> `https://github.com/MartinEgli/caveman-skill.git`
+- `domain-driven-design-skill` -> `https://github.com/MartinEgli/domain-driven-design-skill.git`
 - `enterprise-architecture-skill` -> `https://github.com/MartinEgli/enterprise-architecture-skill.git`
 - `enterprise-security-architecture-skill` -> `https://github.com/MartinEgli/enterprise-security-architecture-skill.git`
 - `single-skill-template` -> `https://github.com/MartinEgli/single-skill-template.git`
