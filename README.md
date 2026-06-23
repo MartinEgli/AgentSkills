@@ -13,6 +13,38 @@ repository and is included here as a Git submodule.
 | `mournival-architecture-skill` | `mournival-architecture` | Four-steward architecture governance review with evidence/risk/value/decision separation | Simple EA or ESA drafting without review need |
 | `single-skill-template` | `example-skill` | Template for building new single-skill repositories | Real domain work without customization |
 
+## Reference Map
+
+These references help position the skills. They are not copied into the skills
+as hard rules unless a skill explicitly says so.
+
+| Reference | Best Fit | Short Summary |
+| --- | --- | --- |
+| [TOGAF Standard, 10th Edition](https://www.opengroup.org/togaf-standard-10th-edition-downloads) | `enterprise-architecture` | Enterprise Architecture standard from The Open Group. Useful for architecture development method, governance, views, architecture practice, and target/transition thinking. |
+| [ArchiMate 3.2 Specification](https://www.opengroup.org/sites/default/files/docs/downloads/n221p.pdf) | `enterprise-architecture` | Open modeling language for describing business, application, data, technology, motivation, implementation, and migration relationships. Useful when outputs should map to architecture models. |
+| [SABSA Executive Summary](https://sabsa.org/sabsa-executive-summary/) | `enterprise-security-architecture` | Business-driven security architecture method. Useful for linking security requirements, risks, controls, and architecture decisions back to business objectives. |
+| [NIST Cybersecurity Framework 2.0](https://www.nist.gov/cyberframework) | `enterprise-security-architecture` | Outcome-oriented cybersecurity risk framework. Useful for communicating security posture and governance across Govern, Identify, Protect, Detect, Respond, and Recover outcomes. |
+| [NIST SP 800-207 Zero Trust Architecture](https://csrc.nist.gov/pubs/sp/800/207/final) | `enterprise-security-architecture` | Zero Trust architecture guidance. Useful for identity, resource-centric access, policy decision/enforcement points, and moving away from implicit network trust. |
+| [NIST SP 800-53 Rev. 5](https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final) | `enterprise-security-architecture` | Security and privacy control catalog. Useful when findings need control families, control intent, and structured control mapping. |
+| [CIS Controls v8.1](https://www.cisecurity.org/controls/v8-1) | `enterprise-security-architecture` | Prioritized security safeguards for practical cyber defense. Useful for concrete control recommendations and implementation-oriented security improvement. |
+| [MITRE ATT&CK Enterprise Matrix](https://attack.mitre.org/matrices/) | `enterprise-security-architecture` | Knowledge base of adversary tactics and techniques. Useful for threat scenarios, detection coverage, attack path thinking, and misuse analysis. |
+
+How to use references:
+
+- Use TOGAF and ArchiMate when the question is architecture structure,
+  lifecycle, modeling, governance, or roadmap.
+- Use SABSA when security must trace back to business goals and risk.
+- Use NIST CSF when the output must communicate cybersecurity outcomes or
+  governance posture.
+- Use NIST SP 800-207 when identity, resource access, trust boundaries, and
+  Zero Trust are central.
+- Use NIST SP 800-53 or CIS Controls when recommendations need concrete
+  controls.
+- Use MITRE ATT&CK when reviewing adversary behavior, threat scenarios, or
+  detection gaps.
+- Use Mournival when evidence, risk, value, and decision authority must be
+  separated before accepting a claim or artifact.
+
 ## How The Skills Differ
 
 ### Enterprise Architecture
