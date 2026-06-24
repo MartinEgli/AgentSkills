@@ -133,7 +133,7 @@ Current assessment:
 | `skill-author-skill` | `skill-author` | realized | 98 | Diagram-scope wording is now explicit; remaining gap is minor handoff wording. |
 | `software-architecture-skill` | `software-architecture` | realized | 100 | None |
 | `solution-architecture-skill` | `solution-architecture` | realized | 100 | None |
-| `single-skill-template` | `example-skill` | template | 84 | Template is assessed separately; it should gain default `agents/openai.yaml` support. |
+| `single-skill-template` | `example-skill` | template | 88 | Template is assessed separately; default `agents/openai.yaml` support is now included. Remaining gaps are lower mode count and no diagram capability. |
 
 Interpretation:
 
