@@ -3,39 +3,21 @@
 Superrepo for agent-related skills. Each skill lives in its own GitHub
 repository and is included here as a Git submodule.
 
-## Agent Images
-
-The documentation uses the checked-in skill icon assets as agent images.
-
-| Agent Image | Skill |
-| --- | --- |
-| ![Azure Architecture](azure-architecture-skill/skills/azure-architecture/assets/azure-architecture-small.svg) | `azure-architecture` |
-| ![Caveman](caveman-skill/plugins/caveman/assets/caveman-small.svg) | `caveman` and helper skills |
-| ![Domain-Driven Design](domain-driven-design-skill/skills/domain-driven-design/assets/domain-driven-design-small.svg) | `domain-driven-design` |
-| ![.NET Engineering](dotnet-engineering-skill/skills/dotnet-engineering/assets/dotnet-engineering-small.svg) | `dotnet-engineering` |
-| ![Enterprise Architecture](enterprise-architecture-skill/skills/enterprise-architecture/assets/enterprise-architecture-small.svg) | `enterprise-architecture` |
-| ![Enterprise Security Architecture](enterprise-security-architecture-skill/skills/enterprise-security-architecture/assets/enterprise-security-architecture-small.svg) | `enterprise-security-architecture` |
-| ![Mournival Architecture](mournival-architecture-skill/skills/mournival-architecture/assets/mournival-architecture-small.svg) | `mournival-architecture` |
-| ![Skill Author](skill-author-skill/skills/skill-author/assets/skill-author-small.svg) | `skill-author` |
-| ![Software Architecture](software-architecture-skill/skills/software-architecture/assets/software-architecture-small.svg) | `software-architecture` |
-| ![Solution Architecture](solution-architecture-skill/skills/solution-architecture/assets/solution-architecture-small.svg) | `solution-architecture` |
-| ![Example Skill](single-skill-template/skills/example-skill/assets/example-skill-small.svg) | `example-skill` template |
-
 ## Skill Catalog
 
-| Skill Repo | Codex Skill | Use For | Do Not Use For |
-| --- | --- | --- | --- |
-| `azure-architecture-skill` | `azure-architecture` | Azure target architecture, landing zones, Well-Architected review, governance, migration positioning, diagrams, Azure skill routing | Direct deployment, live diagnostics, exact cost queries, .NET code review, or security approval |
-| `caveman-skill` | `caveman` plus helper skills | Short, token-efficient agent responses and caveman helper workflows | Architecture or security review |
-| `domain-driven-design-skill` | `domain-driven-design` | Deep DDD: bounded contexts, subdomains, context maps, aggregates, domain events, event storming, DDD diagrams | General software architecture, EA roadmap, security approval, or governance acceptance |
-| `dotnet-engineering-skill` | `dotnet-engineering` | C#, ASP.NET Core, EF Core, testing, performance, modernization, Azure SDK integration, .NET diagrams | Broad EA, Azure platform architecture, non-.NET architecture, security approval, or final governance |
-| `enterprise-architecture-skill` | `enterprise-architecture` | Capability, target architecture, roadmap, portfolio, architecture decisions, EA diagrams | Detailed threat/control/security approval, code-level design, or final evidence acceptance |
-| `enterprise-security-architecture-skill` | `enterprise-security-architecture` | Secure design review, threat/risk/control mapping, security target architecture, Clean AI security, security diagrams | General EA strategy, code design, DDD modeling, or final evidence acceptance |
-| `mournival-architecture-skill` | `mournival-architecture` | Four-steward architecture governance review with evidence/risk/value/decision separation, governance diagrams | Creating the primary EA, ESA, software, or DDD design |
-| `skill-author-skill` | `skill-author` | Create, refine, validate, release, catalog, and adapt skills for Codex, Claude, Cursor, Windsurf, Cline, and other agent hosts with evidence, Gitflow, submodules, and AgentSkills README/AGENTS updates | Domain architecture, software, Azure, .NET, DDD, security, or governance work that belongs to another skill |
-| `software-architecture-skill` | `software-architecture` | Software design, DDD handoff, Clean Architecture, Clean Coding, ADRs, integration, Clean AI design, software diagrams | Enterprise portfolio strategy, security approval, deep DDD modeling, or final evidence acceptance |
-| `solution-architecture-skill` | `solution-architecture` | End-to-end solution design and review: context, components, integrations, data flows, NFRs, deployment topology, ADRs, roadmap, diagrams, and implementation handoffs | Enterprise portfolio strategy, deep code design, Azure landing zones, security approval, or final governance acceptance |
-| `single-skill-template` | `example-skill` | Template for building new single-skill repositories | Real domain work without customization |
+| Agent | Skill Repo | Codex Skill | Use For | Do Not Use For |
+| --- | --- | --- | --- | --- |
+| ![Azure Architecture](azure-architecture-skill/skills/azure-architecture/assets/azure-architecture-small.svg) | `azure-architecture-skill` | `azure-architecture` | Azure target architecture, landing zones, Well-Architected review, governance, migration positioning, diagrams, Azure skill routing | Direct deployment, live diagnostics, exact cost queries, .NET code review, or security approval |
+| ![Caveman](caveman-skill/plugins/caveman/assets/caveman-small.svg) | `caveman-skill` | `caveman` plus helper skills | Short, token-efficient agent responses and caveman helper workflows | Architecture or security review |
+| ![Domain-Driven Design](domain-driven-design-skill/skills/domain-driven-design/assets/domain-driven-design-small.svg) | `domain-driven-design-skill` | `domain-driven-design` | Deep DDD: bounded contexts, subdomains, context maps, aggregates, domain events, event storming, DDD diagrams | General software architecture, EA roadmap, security approval, or governance acceptance |
+| ![.NET Engineering](dotnet-engineering-skill/skills/dotnet-engineering/assets/dotnet-engineering-small.svg) | `dotnet-engineering-skill` | `dotnet-engineering` | C#, ASP.NET Core, EF Core, testing, performance, modernization, Azure SDK integration, .NET diagrams | Broad EA, Azure platform architecture, non-.NET architecture, security approval, or final governance |
+| ![Enterprise Architecture](enterprise-architecture-skill/skills/enterprise-architecture/assets/enterprise-architecture-small.svg) | `enterprise-architecture-skill` | `enterprise-architecture` | Capability, target architecture, roadmap, portfolio, architecture decisions, EA diagrams | Detailed threat/control/security approval, code-level design, or final evidence acceptance |
+| ![Enterprise Security Architecture](enterprise-security-architecture-skill/skills/enterprise-security-architecture/assets/enterprise-security-architecture-small.svg) | `enterprise-security-architecture-skill` | `enterprise-security-architecture` | Secure design review, threat/risk/control mapping, security target architecture, Clean AI security, security diagrams | General EA strategy, code design, DDD modeling, or final evidence acceptance |
+| ![Mournival Architecture](mournival-architecture-skill/skills/mournival-architecture/assets/mournival-architecture-small.svg) | `mournival-architecture-skill` | `mournival-architecture` | Four-steward architecture governance review with evidence/risk/value/decision separation, governance diagrams | Creating the primary EA, ESA, software, or DDD design |
+| ![Skill Author](skill-author-skill/skills/skill-author/assets/skill-author-small.svg) | `skill-author-skill` | `skill-author` | Create, refine, validate, release, catalog, and adapt skills for Codex, Claude, Cursor, Windsurf, Cline, and other agent hosts with evidence, Gitflow, submodules, and AgentSkills README/AGENTS updates | Domain architecture, software, Azure, .NET, DDD, security, or governance work that belongs to another skill |
+| ![Software Architecture](software-architecture-skill/skills/software-architecture/assets/software-architecture-small.svg) | `software-architecture-skill` | `software-architecture` | Software design, DDD handoff, Clean Architecture, Clean Coding, ADRs, integration, Clean AI design, software diagrams | Enterprise portfolio strategy, security approval, deep DDD modeling, or final evidence acceptance |
+| ![Solution Architecture](solution-architecture-skill/skills/solution-architecture/assets/solution-architecture-small.svg) | `solution-architecture-skill` | `solution-architecture` | End-to-end solution design and review: context, components, integrations, data flows, NFRs, deployment topology, ADRs, roadmap, diagrams, and implementation handoffs | Enterprise portfolio strategy, deep code design, Azure landing zones, security approval, or final governance acceptance |
+| ![Example Skill](single-skill-template/skills/example-skill/assets/example-skill-small.svg) | `single-skill-template` | `example-skill` | Template for building new single-skill repositories | Real domain work without customization |
 
 ## How To Use Skills
 
