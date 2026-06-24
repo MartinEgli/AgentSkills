@@ -87,8 +87,9 @@ For the superrepo:
   skill's output contract, role, mode, diagram capability, or handoff changes.
 - Submodule pointer updates must only be committed after the affected skill repo
   has passed validation and its evidence rules are current.
-- Use `skill-author` for creating, refining, validating, releasing, and
-  cataloging skills when the work changes skill contracts or AgentSkills
+- Use `skill-author` for creating, refining, validating, releasing, cataloging,
+  and adapting skills for Codex, Claude, Cursor, Windsurf, Cline, or other
+  agent hosts when the work changes skill contracts or AgentSkills
   documentation.
 - After creating or materially refining a skill, use the `skill-author`
   feedback route to capture repeatable authoring improvements and classify
@@ -111,7 +112,7 @@ updated whenever:
 Each skill entry in `README.md` must show:
 
 - repository name and GitHub URL
-- Codex skill name
+- skill name and supported agent hosts
 - what the skill is for
 - what the skill is not for
 - example prompts
