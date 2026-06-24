@@ -24,6 +24,7 @@ This superrepo is the control repository for agent skill repositories.
 - `enterprise-security-architecture-skill`
 - `software-architecture-skill`
 - `solution-architecture-skill`
+- `pragmatic-enterprise-solution-architect-skill`
 
 ## Default Workflow
 
