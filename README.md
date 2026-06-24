@@ -14,7 +14,7 @@ repository and is included here as a Git submodule.
 | `enterprise-architecture-skill` | `enterprise-architecture` | Capability, target architecture, roadmap, portfolio, architecture decisions, EA diagrams | Detailed threat/control/security approval, code-level design, or final evidence acceptance |
 | `enterprise-security-architecture-skill` | `enterprise-security-architecture` | Secure design review, threat/risk/control mapping, security target architecture, Clean AI security, security diagrams | General EA strategy, code design, DDD modeling, or final evidence acceptance |
 | `mournival-architecture-skill` | `mournival-architecture` | Four-steward architecture governance review with evidence/risk/value/decision separation, governance diagrams | Creating the primary EA, ESA, software, or DDD design |
-| `skill-author-skill` | `skill-author` | Create, refine, validate, release, and catalog Codex skills with evidence, Gitflow, submodules, and AgentSkills README/AGENTS updates | Domain architecture, software, Azure, .NET, DDD, security, or governance work that belongs to another skill |
+| `skill-author-skill` | `skill-author` | Create, refine, validate, release, catalog, and adapt skills for Codex, Claude, Cursor, Windsurf, Cline, and other agent hosts with evidence, Gitflow, submodules, and AgentSkills README/AGENTS updates | Domain architecture, software, Azure, .NET, DDD, security, or governance work that belongs to another skill |
 | `software-architecture-skill` | `software-architecture` | Software design, DDD handoff, Clean Architecture, Clean Coding, ADRs, integration, Clean AI design, software diagrams | Enterprise portfolio strategy, security approval, deep DDD modeling, or final evidence acceptance |
 | `solution-architecture-skill` | `solution-architecture` | End-to-end solution design and review: context, components, integrations, data flows, NFRs, deployment topology, ADRs, roadmap, diagrams, and implementation handoffs | Enterprise portfolio strategy, deep code design, Azure landing zones, security approval, or final governance acceptance |
 | `single-skill-template` | `example-skill` | Template for building new single-skill repositories | Real domain work without customization |
@@ -130,7 +130,7 @@ Current assessment:
 | `enterprise-architecture-skill` | `enterprise-architecture` | realized | 100 | None |
 | `enterprise-security-architecture-skill` | `enterprise-security-architecture` | realized | 98 | Trigger/boundary wording can be slightly sharper. |
 | `mournival-architecture-skill` | `mournival-architecture` | realized | 95 | Trigger/boundary wording and mode actionability can be sharpened. |
-| `skill-author-skill` | `skill-author` | realized | 94 | Diagram-scope wording should clarify that it governs other skills, not its own diagram output. |
+| `skill-author-skill` | `skill-author` | realized | 98 | Diagram-scope wording is now explicit; remaining gap is minor handoff wording. |
 | `software-architecture-skill` | `software-architecture` | realized | 100 | None |
 | `solution-architecture-skill` | `solution-architecture` | realized | 100 | None |
 | `single-skill-template` | `example-skill` | template | 84 | Template is assessed separately; it should gain default `agents/openai.yaml` support. |
@@ -736,8 +736,8 @@ Template provides:
 Use `skill-author` when the main question is:
 
 ```text
-How should this Codex skill be created, refined, validated, released, and kept
-traceable in AgentSkills?
+How should this agent skill be created, refined, validated, released, adapted
+for Codex/Claude/Cursor/Windsurf/Cline, and kept traceable in AgentSkills?
 ```
 
 Typical work:
@@ -747,6 +747,8 @@ Typical work:
   contracts
 - add or repair evidence and traceability behavior
 - align `agents/openai.yaml`
+- define support for Codex, Claude, Cursor, Windsurf, Cline, or another agent
+  host
 - run validation, tests, packaging, and focused diff review
 - commit and push the skill repo
 - add or update the AgentSkills submodule pointer
@@ -764,6 +766,11 @@ Use skill-author /skill-author evidence to repair traceability rules in this
 skill and update the Superrepo README if the output contract changed.
 ```
 
+```text
+Use skill-author /skill-author agents to adapt this skill for Claude and Cursor
+without losing Codex install support.
+```
+
 Main modes:
 
 - `/skill-author plan`
@@ -775,6 +782,8 @@ Main modes:
 - `/skill-author validate`
 - `/skill-author release`
 - `/skill-author forward-test`
+- `/skill-author agents`
+- `/skill-author feedback`
 
 Output focus:
 
@@ -783,6 +792,7 @@ Output focus:
 - validation status
 - Evidence Receipt
 - Gitflow and submodule actions
+- target-agent compatibility notes
 - README/AGENTS/catalog updates
 
 ## Choosing The Right Skill
@@ -800,7 +810,7 @@ Use this decision guide:
 | Security design, threats, controls, residual risk | `enterprise-security-architecture` |
 | Evidence/risk/value/decision governance review | `mournival-architecture` |
 | Shorter agent communication | `caveman` |
-| Build or refine a skill repo with validation, evidence, Gitflow, and catalog updates | `skill-author` |
+| Build or refine a skill repo with validation, evidence, Gitflow, target-agent support, and catalog updates | `skill-author` |
 | Base scaffold for a new skill repo | `single-skill-template` |
 
 If a task crosses skills:
@@ -821,8 +831,8 @@ If a task crosses skills:
 8. Use `mournival-architecture` for final governance decision when evidence,
    risk, value, and approval must be separated.
 9. Use `skill-author` when the task is about the skills themselves: new skill
-   repos, skill contracts, evidence rules, validation, release, or Superrepo
-   catalog maintenance.
+   repos, skill contracts, evidence rules, validation, release, Codex/Claude/
+   Cursor/Windsurf/Cline support, or Superrepo catalog maintenance.
 
 ## Install Examples
 

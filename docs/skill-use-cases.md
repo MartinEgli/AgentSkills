@@ -470,9 +470,10 @@ Do not use for:
 
 Skill: `skill-author`
 
-Use this skill for creating and maintaining Codex skills in the AgentSkills
+Use this skill for creating and maintaining agent skills in the AgentSkills
 ecosystem. It turns the template into a real skill repo and keeps evidence,
-validation, Gitflow, submodules, and catalog documentation aligned.
+validation, Gitflow, submodules, target-agent compatibility, and catalog
+documentation aligned.
 
 Primary use cases:
 
@@ -483,6 +484,9 @@ Primary use cases:
   diagram scope, or UI metadata.
 - Add or repair `references/evidence-traceability.md`.
 - Align `agents/openai.yaml` with the current skill contract.
+- Define support for Codex, Claude, Cursor, Windsurf, Cline, or another agent
+  host, including metadata, install/import path, limitations, and validation
+  evidence.
 - Validate, test, package, commit, push, version, and release a skill repo.
 - Add the repo to AgentSkills as a submodule and update README, AGENTS, install
   examples, and this use-case document.
@@ -499,6 +503,8 @@ Typical inputs:
 - source material and existing templates
 - adjacent skills and handoff boundaries
 - validation, release, install, and Superrepo expectations
+- target agent host such as Codex, Claude, Cursor, Windsurf, Cline, or another
+  named agent
 
 Expected outputs:
 
@@ -509,6 +515,7 @@ Expected outputs:
 - updated submodule pointer and Superrepo catalog docs
 - Evidence Receipt for important design and release decisions
 - feedback items classified as applied, deferred, rejected, or routed
+- supported agent hosts and compatibility gaps
 
 Do not use for:
 
