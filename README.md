@@ -860,6 +860,9 @@ npx -y skills add MartinEgli/skill-author-skill --skill * -a codex --yes
 
 - [Codex Skill Files](docs/codex-skill-files.md): minimum files Codex needs,
   optional quality structure, install pattern, and validation standard.
+- [Agent Skill Surfaces](docs/agent-skill-surfaces.md): how skill contracts can
+  be represented for Claude Code, Cursor, Cline, Windsurf, and other agent
+  hosts without losing the canonical `SKILL.md` contract.
 - [Skill Use Cases](docs/skill-use-cases.md): detailed descriptions, inputs,
   outputs, handoffs, and use cases for every skill.
 
