@@ -57,8 +57,13 @@ Primary use cases:
 - Create a pragmatic transition roadmap with immediate, next, and later steps.
 - Review an architecture artifact for simplicity, reversibility, trade-offs,
   and delivery feasibility.
+- Create pragmatic concepts and architecture specifications.
 - Create lightweight Mermaid, PlantUML, C4-style, context, sequence,
   dependency, or roadmap diagrams when they clarify a decision.
+- Create Draw.io / diagrams.net shape tables or import-ready draft structures.
+- Create Archi/ArchiMate-oriented element, relationship, and view mappings.
+- Create ADOIT-oriented object, relation, attribute, and view mappings when the
+  ADOIT metamodel is known or explicitly marked as a gap.
 
 Typical inputs:
 
@@ -75,6 +80,8 @@ Expected outputs:
 - Evidence Receipt
 - options and trade-offs
 - recommendation
+- pragmatic concept/specification sections
+- Mermaid, PlantUML, Draw.io, Archi/ArchiMate, or ADOIT-oriented model output
 - risks and mitigations
 - decide now / defer / spike / escalate list
 - next delivery steps
@@ -103,11 +110,24 @@ Use pragmatic-enterprise-solution-architect /pragmatic-architecture decide to
 compare these three integration options and recommend the pragmatic path.
 ```
 
+```text
+Use pragmatic-enterprise-solution-architect /pragmatic-architecture spec to
+create a concept specification with Mermaid and PlantUML views.
+```
+
+```text
+Use pragmatic-enterprise-solution-architect /pragmatic-architecture model-export
+to create an ArchiMate-oriented model table and a Draw.io handoff draft.
+```
+
 Evidence expectation:
 
 Keep facts, assumptions, gaps, and inferences separate. Recommendations should
 show why they are pragmatic now, what would invalidate them, and which specialist
-skill should take over if deeper design or governance is required.
+skill should take over if deeper design or governance is required. Tool-oriented
+outputs must state whether they are documentation-ready, import-ready drafts, or
+repository-mapping drafts, and must mark tool import or metamodel validation
+gaps.
 
 ## Azure Architecture
 
