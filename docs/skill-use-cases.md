@@ -414,3 +414,49 @@ Do not use for:
 - real domain work without replacing the example content
 - broad multi-skill repositories
 
+## Skill Author
+
+Skill: `skill-author`
+
+Use this skill for creating and maintaining Codex skills in the AgentSkills
+ecosystem. It turns the template into a real skill repo and keeps evidence,
+validation, Gitflow, submodules, and catalog documentation aligned.
+
+Primary use cases:
+
+- Plan a new skill contract: name, trigger, scope, boundaries, modes, handoffs,
+  references, assets, quality gates, and output contracts.
+- Create a new skill repo from `single-skill-template`.
+- Refine an existing skill's `SKILL.md`, roles, modes, handoffs, evidence rules,
+  diagram scope, or UI metadata.
+- Add or repair `references/evidence-traceability.md`.
+- Align `agents/openai.yaml` with the current skill contract.
+- Validate, test, package, commit, push, version, and release a skill repo.
+- Add the repo to AgentSkills as a submodule and update README, AGENTS, install
+  examples, and this use-case document.
+- Define forward-testing prompts for realistic skill validation.
+
+Typical inputs:
+
+- target skill name and repo name
+- user prompts that should and should not trigger the skill
+- role or mode requirements
+- source material and existing templates
+- adjacent skills and handoff boundaries
+- validation, release, install, and Superrepo expectations
+
+Expected outputs:
+
+- focused skill contract
+- updated `SKILL.md`, references, assets, and `agents/openai.yaml`
+- validation/test/package results
+- granular commits and pushed repos when requested by AgentSkills policy
+- updated submodule pointer and Superrepo catalog docs
+- Evidence Receipt for important design and release decisions
+
+Do not use for:
+
+- domain architecture, DDD, Azure, .NET, security, or governance decisions
+- final evidence acceptance of architecture artifacts
+- adding unsupported domain knowledge to make a skill look complete
+
