@@ -130,10 +130,10 @@ Current assessment:
 | `enterprise-architecture-skill` | `enterprise-architecture` | realized | 100 | None |
 | `enterprise-security-architecture-skill` | `enterprise-security-architecture` | realized | 98 | Trigger/boundary wording can be slightly sharper. |
 | `mournival-architecture-skill` | `mournival-architecture` | realized | 95 | Trigger/boundary wording and mode actionability can be sharpened. |
-| `skill-author-skill` | `skill-author` | realized | 98 | Diagram-scope wording is now explicit; remaining gap is minor handoff wording. |
+| `skill-author-skill` | `skill-author` | realized | 98 | Diagram scope is checked; remaining gap is minor handoff wording. |
 | `software-architecture-skill` | `software-architecture` | realized | 100 | None |
 | `solution-architecture-skill` | `solution-architecture` | realized | 100 | None |
-| `single-skill-template` | `example-skill` | template | 88 | Template is assessed separately; default `agents/openai.yaml` support is now included. Remaining gaps are lower mode count and no diagram capability. |
+| `single-skill-template` | `example-skill` | template | 88 | Template is assessed separately; default `agents/openai.yaml` and generated icon support are now included. Remaining gaps are lower mode count and no diagram capability. |
 
 Interpretation:
 
@@ -726,6 +726,7 @@ Template provides:
 
 - `SKILL.md` structure
 - references/assets/examples pattern
+- generated SVG skill icons wired through `agents/openai.yaml`
 - validation script
 - package script
 - GitHub Actions validation
@@ -746,7 +747,7 @@ Typical work:
 - refine `SKILL.md` triggers, modes, roles, handoffs, boundaries, and output
   contracts
 - add or repair evidence and traceability behavior
-- align `agents/openai.yaml`
+- align `agents/openai.yaml`, including display name, description, and icon assets
 - define support for Codex, Claude, Cursor, Windsurf, Cline, or another agent
   host
 - run validation, tests, packaging, and focused diff review
