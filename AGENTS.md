@@ -17,6 +17,7 @@ This superrepo is the control repository for agent skill repositories.
 - `azure-architecture-skill`
 - `domain-driven-design-skill`
 - `dotnet-engineering-skill`
+- `skill-author-skill`
 - `single-skill-template`
 - `mournival-architecture-skill`
 - `enterprise-architecture-skill`
@@ -85,6 +86,9 @@ For the superrepo:
   skill's output contract, role, mode, diagram capability, or handoff changes.
 - Submodule pointer updates must only be committed after the affected skill repo
   has passed validation and its evidence rules are current.
+- Use `skill-author` for creating, refining, validating, releasing, and
+  cataloging skills when the work changes skill contracts or AgentSkills
+  documentation.
 
 ## Superrepo README Maintenance
 

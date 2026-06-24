@@ -25,3 +25,6 @@
 [submodule "azure-architecture-skill"]
 	path = azure-architecture-skill
 	url = https://github.com/MartinEgli/azure-architecture-skill.git
+[submodule "skill-author-skill"]
+	path = skill-author-skill
+	url = https://github.com/MartinEgli/skill-author-skill.git

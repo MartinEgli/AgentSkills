@@ -14,6 +14,7 @@ repository and is included here as a Git submodule.
 | `enterprise-architecture-skill` | `enterprise-architecture` | Capability, target architecture, roadmap, portfolio, architecture decisions, EA diagrams | Detailed threat/control/security approval, code-level design, or final evidence acceptance |
 | `enterprise-security-architecture-skill` | `enterprise-security-architecture` | Secure design review, threat/risk/control mapping, security target architecture, Clean AI security, security diagrams | General EA strategy, code design, DDD modeling, or final evidence acceptance |
 | `mournival-architecture-skill` | `mournival-architecture` | Four-steward architecture governance review with evidence/risk/value/decision separation, governance diagrams | Creating the primary EA, ESA, software, or DDD design |
+| `skill-author-skill` | `skill-author` | Create, refine, validate, release, and catalog Codex skills with evidence, Gitflow, submodules, and AgentSkills README/AGENTS updates | Domain architecture, software, Azure, .NET, DDD, security, or governance work that belongs to another skill |
 | `software-architecture-skill` | `software-architecture` | Software design, DDD handoff, Clean Architecture, Clean Coding, ADRs, integration, Clean AI design, software diagrams | Enterprise portfolio strategy, security approval, deep DDD modeling, or final evidence acceptance |
 | `single-skill-template` | `example-skill` | Template for building new single-skill repositories | Real domain work without customization |
 
@@ -108,6 +109,9 @@ Handoff map:
 | `domain-driven-design` | `software-architecture` | Deployment, APIs, quality attributes, Clean Architecture, integration design |
 | `domain-driven-design` | `enterprise-architecture` | Capability model, portfolio, roadmap, operating model |
 | Any architecture skill | `mournival-architecture` | Evidence acceptance, final gate, traceability, productive-use governance, AI-generated claim review |
+| Any skill repo change | `skill-author` | Create/refine skill contract, evidence rules, modes, handoffs, validation, release, or AgentSkills catalog update |
+| `skill-author` | `single-skill-template` | Need the base scaffold for a new single-skill repository |
+| `skill-author` | Domain skill | Need actual domain content, decisions, standards, diagrams, or review outside skill-authoring |
 
 Diagram scope:
 
@@ -120,6 +124,7 @@ Diagram scope:
 | `software-architecture` | C4, sequence, component, deployment, Clean Architecture, API, event, data ownership, and Clean AI software diagrams |
 | `domain-driven-design` | Context maps, subdomain maps, aggregate boundaries, domain event flows, event storming summaries, ubiquitous language maps |
 | `mournival-architecture` | Evidence traceability, role finding flow, decision flow, veto maps, review states, productive-use gates |
+| `skill-author` | Skill contract flow, evidence traceability for skill changes, Gitflow/release flow, submodule maintenance flow |
 
 Use Mermaid for quick Markdown-native diagrams. Use PlantUML or C4-style
 notation when the diagram should be kept as architecture-as-code or needs a
@@ -612,6 +617,60 @@ Template provides:
 - GitHub Actions validation
 - install documentation
 
+### Skill Author
+
+Use `skill-author` when the main question is:
+
+```text
+How should this Codex skill be created, refined, validated, released, and kept
+traceable in AgentSkills?
+```
+
+Typical work:
+
+- create a new skill repo from `single-skill-template`
+- refine `SKILL.md` triggers, modes, roles, handoffs, boundaries, and output
+  contracts
+- add or repair evidence and traceability behavior
+- align `agents/openai.yaml`
+- run validation, tests, packaging, and focused diff review
+- commit and push the skill repo
+- add or update the AgentSkills submodule pointer
+- update README, AGENTS, install examples, and use-case docs
+
+Example prompts:
+
+```text
+Use skill-author /skill-author create to build a new solution-architecture-skill
+from single-skill-template and add it to AgentSkills.
+```
+
+```text
+Use skill-author /skill-author evidence to repair traceability rules in this
+skill and update the Superrepo README if the output contract changed.
+```
+
+Main modes:
+
+- `/skill-author plan`
+- `/skill-author create`
+- `/skill-author refine`
+- `/skill-author evidence`
+- `/skill-author handoffs`
+- `/skill-author catalog`
+- `/skill-author validate`
+- `/skill-author release`
+- `/skill-author forward-test`
+
+Output focus:
+
+- skill contract decisions
+- changed artifacts
+- validation status
+- Evidence Receipt
+- Gitflow and submodule actions
+- README/AGENTS/catalog updates
+
 ## Choosing The Right Skill
 
 Use this decision guide:
@@ -626,7 +685,8 @@ Use this decision guide:
 | Security design, threats, controls, residual risk | `enterprise-security-architecture` |
 | Evidence/risk/value/decision governance review | `mournival-architecture` |
 | Shorter agent communication | `caveman` |
-| Build a new skill repo | `single-skill-template` |
+| Build or refine a skill repo with validation, evidence, Gitflow, and catalog updates | `skill-author` |
+| Base scaffold for a new skill repo | `single-skill-template` |
 
 If a task crosses skills:
 
@@ -643,6 +703,9 @@ If a task crosses skills:
    controls, and AI security.
 7. Use `mournival-architecture` for final governance decision when evidence,
    risk, value, and approval must be separated.
+8. Use `skill-author` when the task is about the skills themselves: new skill
+   repos, skill contracts, evidence rules, validation, release, or Superrepo
+   catalog maintenance.
 
 ## Install Examples
 
@@ -662,6 +725,7 @@ npx -y skills add MartinEgli/domain-driven-design-skill --skill * -a codex --yes
 npx -y skills add MartinEgli/software-architecture-skill --skill * -a codex --yes
 npx -y skills add MartinEgli/enterprise-security-architecture-skill --skill * -a codex --yes
 npx -y skills add MartinEgli/mournival-architecture-skill --skill * -a codex --yes
+npx -y skills add MartinEgli/skill-author-skill --skill * -a codex --yes
 ```
 
 ## Docs
@@ -679,6 +743,7 @@ npx -y skills add MartinEgli/mournival-architecture-skill --skill * -a codex --y
 - `dotnet-engineering-skill` -> `https://github.com/MartinEgli/dotnet-engineering-skill.git`
 - `enterprise-architecture-skill` -> `https://github.com/MartinEgli/enterprise-architecture-skill.git`
 - `enterprise-security-architecture-skill` -> `https://github.com/MartinEgli/enterprise-security-architecture-skill.git`
+- `skill-author-skill` -> `https://github.com/MartinEgli/skill-author-skill.git`
 - `single-skill-template` -> `https://github.com/MartinEgli/single-skill-template.git`
 - `mournival-architecture-skill` -> `https://github.com/MartinEgli/mournival-architecture-skill.git`
 - `software-architecture-skill` -> `https://github.com/MartinEgli/software-architecture-skill.git`
