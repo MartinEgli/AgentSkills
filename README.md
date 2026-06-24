@@ -14,6 +14,7 @@ repository and is included here as a Git submodule.
 | ![Enterprise Architecture](enterprise-architecture-skill/skills/enterprise-architecture/assets/enterprise-architecture-small.svg) | `enterprise-architecture-skill` | `enterprise-architecture` | Capability, target architecture, roadmap, portfolio, architecture decisions, EA diagrams | Detailed threat/control/security approval, code-level design, or final evidence acceptance |
 | ![Enterprise Security Architecture](enterprise-security-architecture-skill/skills/enterprise-security-architecture/assets/enterprise-security-architecture-small.svg) | `enterprise-security-architecture-skill` | `enterprise-security-architecture` | Secure design review, threat/risk/control mapping, security target architecture, Clean AI security, security diagrams | General EA strategy, code design, DDD modeling, or final evidence acceptance |
 | ![Mournival Architecture](mournival-architecture-skill/skills/mournival-architecture/assets/mournival-architecture-small.svg) | `mournival-architecture-skill` | `mournival-architecture` | Four-steward architecture governance review with evidence/risk/value/decision separation, governance diagrams | Creating the primary EA, ESA, software, or DDD design |
+| ![Pragmatic Enterprise Solution Architect](pragmatic-enterprise-solution-architect-skill/skills/pragmatic-enterprise-solution-architect/assets/pragmatic-enterprise-solution-architect-small.svg) | `pragmatic-enterprise-solution-architect-skill` | `pragmatic-enterprise-solution-architect` | Lean enterprise/solution architecture decisions, trade-offs, triage, lightweight briefs, pragmatic roadmaps, and delivery alignment | Formal EA governance, deep solution design, security approval, DDD modeling, Azure platform architecture, or .NET implementation |
 | ![Skill Author](skill-author-skill/skills/skill-author/assets/skill-author-small.svg) | `skill-author-skill` | `skill-author` | Create, refine, validate, release, catalog, and adapt skills for Codex, Claude, Cursor, Windsurf, Cline, and other agent hosts with evidence, Gitflow, submodules, and AgentSkills README/AGENTS updates | Domain architecture, software, Azure, .NET, DDD, security, or governance work that belongs to another skill |
 | ![Software Architecture](software-architecture-skill/skills/software-architecture/assets/software-architecture-small.svg) | `software-architecture-skill` | `software-architecture` | Software design, DDD handoff, Clean Architecture, Clean Coding, ADRs, integration, Clean AI design, software diagrams | Enterprise portfolio strategy, security approval, deep DDD modeling, or final evidence acceptance |
 | ![Solution Architecture](solution-architecture-skill/skills/solution-architecture/assets/solution-architecture-small.svg) | `solution-architecture-skill` | `solution-architecture` | End-to-end solution design and review: context, components, integrations, data flows, NFRs, deployment topology, ADRs, roadmap, diagrams, and implementation handoffs | Enterprise portfolio strategy, deep code design, Azure landing zones, security approval, or final governance acceptance |
@@ -35,6 +36,11 @@ Use enterprise-architecture and assess this target architecture.
 
 ```text
 Use solution-architecture and create context, component, and deployment views.
+```
+
+```text
+Use pragmatic-enterprise-solution-architect to compare these options and
+recommend what we should decide now, defer, spike, or escalate.
 ```
 
 ```text
@@ -879,6 +885,7 @@ Use this decision guide:
 | Deep DDD, bounded contexts, aggregates, event storming | `domain-driven-design` |
 | Security design, threats, controls, residual risk | `enterprise-security-architecture` |
 | Evidence/risk/value/decision governance review | `mournival-architecture` |
+| Lean cross-cutting architecture decision, pragmatic trade-off, delivery triage | `pragmatic-enterprise-solution-architect` |
 | Shorter agent communication | `caveman` |
 | Build or refine a skill repo with validation, evidence, Gitflow, target-agent support, and catalog updates | `skill-author` |
 | Base scaffold for a new skill repo | `single-skill-template` |
@@ -888,19 +895,21 @@ If a task crosses skills:
 1. Use `enterprise-architecture` for business/target/roadmap structure.
 2. Use `solution-architecture` for concrete end-to-end solution design,
    integrations, quality attributes, deployment view, ADRs, and build roadmap.
-3. Use `azure-architecture` for Azure platform, landing zone, governance,
+3. Use `pragmatic-enterprise-solution-architect` when the decision spans EA and
+   SA but needs a lean, delivery-ready trade-off before deeper design.
+4. Use `azure-architecture` for Azure platform, landing zone, governance,
    workload architecture, and Azure execution routing.
-4. Use `dotnet-engineering` for .NET implementation, ASP.NET Core, EF Core,
+5. Use `dotnet-engineering` for .NET implementation, ASP.NET Core, EF Core,
    testing, performance, modernization, and Azure SDK integration.
-5. Use `domain-driven-design` for deep domain modeling, bounded contexts,
+6. Use `domain-driven-design` for deep domain modeling, bounded contexts,
    aggregates, event storming, and context maps.
-6. Use `software-architecture` for system/service design, Clean Architecture,
+7. Use `software-architecture` for system/service design, Clean Architecture,
    Clean Coding, integration, ADRs, and Clean AI design boundaries.
-7. Use `enterprise-security-architecture` for security-specific review,
+8. Use `enterprise-security-architecture` for security-specific review,
    controls, and AI security.
-8. Use `mournival-architecture` for final governance decision when evidence,
+9. Use `mournival-architecture` for final governance decision when evidence,
    risk, value, and approval must be separated.
-9. Use `skill-author` when the task is about the skills themselves: new skill
+10. Use `skill-author` when the task is about the skills themselves: new skill
    repos, skill contracts, evidence rules, validation, release, Codex/Claude/
    Cursor/Windsurf/Cline support, or Superrepo catalog maintenance.
 
@@ -921,6 +930,7 @@ npx -y skills add MartinEgli/dotnet-engineering-skill --skill * -a codex --yes
 npx -y skills add MartinEgli/solution-architecture-skill --skill * -a codex --yes
 npx -y skills add MartinEgli/domain-driven-design-skill --skill * -a codex --yes
 npx -y skills add MartinEgli/software-architecture-skill --skill * -a codex --yes
+npx -y skills add MartinEgli/pragmatic-enterprise-solution-architect-skill --skill * -a codex --yes
 npx -y skills add MartinEgli/enterprise-security-architecture-skill --skill * -a codex --yes
 npx -y skills add MartinEgli/mournival-architecture-skill --skill * -a codex --yes
 npx -y skills add MartinEgli/skill-author-skill --skill * -a codex --yes
@@ -944,6 +954,7 @@ npx -y skills add MartinEgli/skill-author-skill --skill * -a codex --yes
 - `dotnet-engineering-skill` -> `https://github.com/MartinEgli/dotnet-engineering-skill.git`
 - `enterprise-architecture-skill` -> `https://github.com/MartinEgli/enterprise-architecture-skill.git`
 - `enterprise-security-architecture-skill` -> `https://github.com/MartinEgli/enterprise-security-architecture-skill.git`
+- `pragmatic-enterprise-solution-architect-skill` -> `https://github.com/MartinEgli/pragmatic-enterprise-solution-architect-skill.git`
 - `skill-author-skill` -> `https://github.com/MartinEgli/skill-author-skill.git`
 - `single-skill-template` -> `https://github.com/MartinEgli/single-skill-template.git`
 - `mournival-architecture-skill` -> `https://github.com/MartinEgli/mournival-architecture-skill.git`

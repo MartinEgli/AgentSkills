@@ -35,9 +35,79 @@ available.
 | ![Domain-Driven Design](../domain-driven-design-skill/skills/domain-driven-design/assets/domain-driven-design-small.svg) | `domain-driven-design` |
 | ![Mournival Architecture](../mournival-architecture-skill/skills/mournival-architecture/assets/mournival-architecture-small.svg) | `mournival-architecture` |
 | ![Solution Architecture](../solution-architecture-skill/skills/solution-architecture/assets/solution-architecture-small.svg) | `solution-architecture` |
+| ![Pragmatic Enterprise Solution Architect](../pragmatic-enterprise-solution-architect-skill/skills/pragmatic-enterprise-solution-architect/assets/pragmatic-enterprise-solution-architect-small.svg) | `pragmatic-enterprise-solution-architect` |
 | ![Skill Author](../skill-author-skill/skills/skill-author/assets/skill-author-small.svg) | `skill-author` |
 | ![Caveman](../caveman-skill/plugins/caveman/assets/caveman-small.svg) | `caveman` and helper skills |
 | ![Example Skill](../single-skill-template/skills/example-skill/assets/example-skill-small.svg) | `example-skill` template |
+
+## Pragmatic Enterprise Solution Architect
+
+Skill: `pragmatic-enterprise-solution-architect`
+
+Use this skill when the architecture question spans enterprise context and
+solution design, but the user needs a fast, decision-ready, delivery-oriented
+answer instead of a full framework artifact.
+
+Primary use cases:
+
+- Create a lean architecture brief for a messy or time-boxed initiative.
+- Compare architecture options and recommend what to decide now.
+- Triage unclear ownership, competing platforms, missing NFRs, or delivery
+  blockers.
+- Create a pragmatic transition roadmap with immediate, next, and later steps.
+- Review an architecture artifact for simplicity, reversibility, trade-offs,
+  and delivery feasibility.
+- Create lightweight Mermaid, PlantUML, C4-style, context, sequence,
+  dependency, or roadmap diagrams when they clarify a decision.
+
+Typical inputs:
+
+- business outcome or decision to support
+- current state, proposed solution, or architecture notes
+- known constraints such as deadline, cost, policy, risk appetite, and teams
+- candidate options
+- known gaps, risks, stakeholders, and decision owners
+
+Expected outputs:
+
+- decision or problem statement
+- concise context and constraints
+- Evidence Receipt
+- options and trade-offs
+- recommendation
+- risks and mitigations
+- decide now / defer / spike / escalate list
+- next delivery steps
+
+Do not use it for:
+
+- formal enterprise target architecture or portfolio governance; use
+  `enterprise-architecture`
+- deep solution component, integration, data, NFR, or deployment design; use
+  `solution-architecture`
+- security threat/control acceptance; use
+  `enterprise-security-architecture`
+- deep DDD modeling; use `domain-driven-design`
+- Azure landing zone or platform architecture; use `azure-architecture`
+- .NET implementation guidance; use `dotnet-engineering`
+
+Example prompts:
+
+```text
+Use pragmatic-enterprise-solution-architect to triage this initiative and tell
+me what we should decide now, defer, spike, or escalate.
+```
+
+```text
+Use pragmatic-enterprise-solution-architect /pragmatic-architecture decide to
+compare these three integration options and recommend the pragmatic path.
+```
+
+Evidence expectation:
+
+Keep facts, assumptions, gaps, and inferences separate. Recommendations should
+show why they are pragmatic now, what would invalidate them, and which specialist
+skill should take over if deeper design or governance is required.
 
 ## Azure Architecture
 
