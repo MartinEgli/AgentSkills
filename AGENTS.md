@@ -23,6 +23,7 @@ This superrepo is the control repository for agent skill repositories.
 - `enterprise-architecture-skill`
 - `enterprise-security-architecture-skill`
 - `software-architecture-skill`
+- `solution-architecture-skill`
 
 ## Default Workflow
 
@@ -89,6 +90,9 @@ For the superrepo:
 - Use `skill-author` for creating, refining, validating, releasing, and
   cataloging skills when the work changes skill contracts or AgentSkills
   documentation.
+- After creating or materially refining a skill, use the `skill-author`
+  feedback route to capture repeatable authoring improvements and classify
+  them as applied, deferred, rejected, or routed.
 
 ## Superrepo README Maintenance
 

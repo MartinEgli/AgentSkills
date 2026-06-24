@@ -122,6 +122,58 @@ Do not use for:
 - security approval
 - final governance acceptance
 
+## Solution Architecture
+
+Skill: `solution-architecture`
+
+Use this skill when the main task is concrete, executable solution design across
+system context, components, integrations, data flows, quality attributes,
+deployment topology, decisions, and implementation roadmap.
+
+Primary use cases:
+
+- Design target solution architecture for a product, platform, system, or
+  initiative.
+- Review proposed solution architecture before implementation.
+- Define actors, external systems, solution boundary, components, integrations,
+  and data flows.
+- Elicit or review quality attributes and non-functional requirements.
+- Compare solution options and produce ADR candidates.
+- Review APIs, events, data ownership, consistency boundaries, and integration
+  risks.
+- Create implementation slices, sequencing, dependencies, and delivery risks.
+- Review AI-enabled solution boundaries and route software/security/governance
+  concerns to the right skill.
+- Create Mermaid, PlantUML, C4, sequence, component, data-flow, and deployment
+  diagrams.
+
+Typical inputs:
+
+- business goal, stakeholders, users, actors, and system boundary
+- functional requirements and key workflows
+- quality attributes, NFRs, constraints, and known decisions
+- current architecture, APIs, schemas, data domains, events, and integrations
+- platform, runtime, hosting, security, privacy, and operational constraints
+- delivery timeline, team ownership, and implementation sequencing
+
+Expected outputs:
+
+- solution context and boundary
+- component, integration, data-flow, and deployment views
+- quality attribute and NFR review
+- solution options, trade-offs, and ADR candidates
+- risks, assumptions, gaps, and handoffs
+- implementation roadmap and slices
+- Evidence Receipt for material claims and diagrams
+
+Do not use for:
+
+- enterprise portfolio, capability strategy, or long-range operating model
+- deep code design or tactical DDD
+- Azure landing zone and subscription/platform design
+- security approval or residual risk acceptance
+- final governance acceptance
+
 ## Enterprise Architecture
 
 Skill: `enterprise-architecture`
@@ -435,6 +487,9 @@ Primary use cases:
 - Add the repo to AgentSkills as a submodule and update README, AGENTS, install
   examples, and this use-case document.
 - Define forward-testing prompts for realistic skill validation.
+- Capture feedback from newly built skills and route repeatable authoring
+  improvements back into `skill-author`, `single-skill-template`, AgentSkills
+  docs, or a target skill.
 
 Typical inputs:
 
@@ -453,6 +508,7 @@ Expected outputs:
 - granular commits and pushed repos when requested by AgentSkills policy
 - updated submodule pointer and Superrepo catalog docs
 - Evidence Receipt for important design and release decisions
+- feedback items classified as applied, deferred, rejected, or routed
 
 Do not use for:
 

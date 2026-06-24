@@ -28,3 +28,6 @@
 [submodule "skill-author-skill"]
 	path = skill-author-skill
 	url = https://github.com/MartinEgli/skill-author-skill.git
+[submodule "solution-architecture-skill"]
+	path = solution-architecture-skill
+	url = https://github.com/MartinEgli/solution-architecture-skill.git
