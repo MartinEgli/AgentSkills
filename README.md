@@ -668,6 +668,8 @@ npx -y skills add MartinEgli/mournival-architecture-skill --skill * -a codex --y
 
 - [Codex Skill Files](docs/codex-skill-files.md): minimum files Codex needs,
   optional quality structure, install pattern, and validation standard.
+- [Skill Use Cases](docs/skill-use-cases.md): detailed descriptions, inputs,
+  outputs, handoffs, and use cases for every skill.
 
 ## Submodules
 
