@@ -19,6 +19,75 @@ repository and is included here as a Git submodule.
 | `solution-architecture-skill` | `solution-architecture` | End-to-end solution design and review: context, components, integrations, data flows, NFRs, deployment topology, ADRs, roadmap, diagrams, and implementation handoffs | Enterprise portfolio strategy, deep code design, Azure landing zones, security approval, or final governance acceptance |
 | `single-skill-template` | `example-skill` | Template for building new single-skill repositories | Real domain work without customization |
 
+## How To Use Skills
+
+In an agent session, use a skill by naming it in the prompt or by asking for
+work that clearly matches the skill scope. A skill is not a standalone program;
+it is a local `SKILL.md` instruction contract that tells the agent when to use
+the skill, which boundaries apply, which references to read, what outputs to
+produce, and how evidence must be tracked.
+
+Explicit skill use:
+
+```text
+Use enterprise-architecture and assess this target architecture.
+```
+
+```text
+Use solution-architecture and create context, component, and deployment views.
+```
+
+```text
+Use skill-author to improve this skill and check the evidence rules.
+```
+
+```text
+Use domain-driven-design for bounded contexts, aggregates, and context maps.
+```
+
+Implicit skill use:
+
+```text
+Create a DDD context map for this domain.
+```
+
+```text
+Review this Azure landing zone design against governance and WAF concerns.
+```
+
+When a skill is selected, the agent should state it briefly before acting, for
+example:
+
+```text
+I am using skill-author because this changes skill contracts, agent metadata,
+and AgentSkills documentation.
+```
+
+For new skill work, use `skill-author` with `single-skill-template`:
+
+```text
+Use skill-author to build a new <name>-skill from single-skill-template and add
+it to AgentSkills.
+```
+
+For skill audits:
+
+```text
+Use skill-author to validate all existing skills, but leave caveman-skill out.
+```
+
+If a task spans multiple skills, name the sequence explicitly:
+
+```text
+Use enterprise-architecture first for capability and roadmap framing, then use
+solution-architecture for the concrete solution design.
+```
+
+The agent must read the selected `SKILL.md` before making skill-specific
+changes, follow the skill's trigger and do-not-use boundaries, preserve evidence
+and traceability, and update this README when skill usage, roles, modes,
+handoffs, outputs, or installation guidance changes.
+
 ## Reference Map
 
 These references help position the skills. They are not copied into the skills
