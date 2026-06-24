@@ -16,6 +16,7 @@ repository and is included here as a Git submodule.
 | `mournival-architecture-skill` | `mournival-architecture` | Four-steward architecture governance review with evidence/risk/value/decision separation, governance diagrams | Creating the primary EA, ESA, software, or DDD design |
 | `skill-author-skill` | `skill-author` | Create, refine, validate, release, and catalog Codex skills with evidence, Gitflow, submodules, and AgentSkills README/AGENTS updates | Domain architecture, software, Azure, .NET, DDD, security, or governance work that belongs to another skill |
 | `software-architecture-skill` | `software-architecture` | Software design, DDD handoff, Clean Architecture, Clean Coding, ADRs, integration, Clean AI design, software diagrams | Enterprise portfolio strategy, security approval, deep DDD modeling, or final evidence acceptance |
+| `solution-architecture-skill` | `solution-architecture` | End-to-end solution design and review: context, components, integrations, data flows, NFRs, deployment topology, ADRs, roadmap, diagrams, and implementation handoffs | Enterprise portfolio strategy, deep code design, Azure landing zones, security approval, or final governance acceptance |
 | `single-skill-template` | `example-skill` | Template for building new single-skill repositories | Real domain work without customization |
 
 ## Reference Map
@@ -96,8 +97,13 @@ Handoff map:
 | From | Hand Off To | When |
 | --- | --- | --- |
 | `enterprise-architecture` | `enterprise-security-architecture` | Threats, controls, data classification, residual risk, security approval |
+| `enterprise-architecture` | `solution-architecture` | Concrete initiative, product, or system needs executable solution design |
 | `enterprise-architecture` | `software-architecture` or `domain-driven-design` | Code-level design, service boundaries, Clean Architecture, Clean Coding, deep DDD |
 | `enterprise-security-architecture` | `enterprise-architecture` | Capability, portfolio, roadmap, operating model, general target architecture |
+| `solution-architecture` | `enterprise-architecture` | Capability strategy, portfolio, operating model, or long-range enterprise roadmap |
+| `solution-architecture` | `software-architecture` or `domain-driven-design` | Deep module/service design, Clean Architecture internals, tactical DDD, aggregates, event storming |
+| `solution-architecture` | `azure-architecture` or `dotnet-engineering` | Azure platform/landing-zone decisions or .NET implementation details |
+| `solution-architecture` | `enterprise-security-architecture` | Threats, controls, Zero Trust, residual risk, or security approval |
 | `enterprise-security-architecture` | `software-architecture` or `domain-driven-design` | API design, code structure, bounded contexts, aggregates when security is not the main question |
 | `azure-architecture` | Specialized Azure skills | Deployment, validation, diagnostics, cost, RBAC, inventory, service-specific operations |
 | `azure-architecture` | `dotnet-engineering` | .NET code, ASP.NET Core, EF Core, package, test, or Azure SDK implementation details |
@@ -122,6 +128,7 @@ Diagram scope:
 | `azure-architecture` | Landing zones, management groups, subscriptions, hub-spoke, Private Link, governance, monitoring, migration, and Azure service topology |
 | `dotnet-engineering` | C4, ASP.NET Core request pipeline, EF Core/data access, Clean Architecture, dependency, sequence, and Azure SDK integration diagrams |
 | `software-architecture` | C4, sequence, component, deployment, Clean Architecture, API, event, data ownership, and Clean AI software diagrams |
+| `solution-architecture` | C4 context/container/component, integration, data flow, sequence, deployment, runtime, NFR, and solution roadmap diagrams |
 | `domain-driven-design` | Context maps, subdomain maps, aggregate boundaries, domain event flows, event storming summaries, ubiquitous language maps |
 | `mournival-architecture` | Evidence traceability, role finding flow, decision flow, veto maps, review states, productive-use gates |
 | `skill-author` | Skill contract flow, evidence traceability for skill changes, Gitflow/release flow, submodule maintenance flow |
@@ -417,6 +424,63 @@ Output focus:
 - Clean AI design concerns
 - Mermaid, PlantUML, or C4 software diagrams
 
+### Solution Architecture
+
+Use `solution-architecture` when the main question is:
+
+```text
+How should this concrete solution be structured end to end so it can be built,
+integrated, operated, and governed?
+```
+
+Typical work:
+
+- solution context and system boundary
+- actors, external systems, components, integrations, and data flows
+- quality attributes and non-functional requirements
+- deployment/runtime topology
+- solution-level ADRs and trade-off analysis
+- implementation roadmap and delivery slices
+- Clean AI at solution level
+- Mermaid, PlantUML, C4, sequence, component, data-flow, and deployment diagrams
+- handoffs from EA intent to Software, Azure, .NET, DDD, Security, and Mournival
+
+Example prompts:
+
+```text
+Use solution-architecture /sol design to create a target solution architecture
+for this customer portal with APIs, events, data ownership, NFRs, deployment
+view, decisions, risks, and implementation slices.
+```
+
+```text
+Use solution-architecture /sol assess to review this proposed solution and
+identify gaps, risks, ADRs, handoffs, and diagrams needed before build starts.
+```
+
+Main modes:
+
+- `/sol assess`
+- `/sol design`
+- `/sol options`
+- `/sol adr`
+- `/sol integration`
+- `/sol nfr`
+- `/sol roadmap`
+- `/sol ai`
+- `/sol diagram`
+
+Output focus:
+
+- context, boundary, and actors
+- components and responsibilities
+- integrations and data flows
+- quality attributes and NFRs
+- solution decisions and ADR candidates
+- roadmap and implementation slices
+- evidence, assumptions, gaps, and handoffs
+- Mermaid, PlantUML, or C4 solution diagrams
+
 ### Domain-Driven Design
 
 Use `domain-driven-design` when the main question is:
@@ -680,6 +744,7 @@ Use this decision guide:
 | Azure landing zone, WAF, governance, Azure architecture routing | `azure-architecture` |
 | .NET, C#, ASP.NET Core, EF Core, tests, performance, modernization | `dotnet-engineering` |
 | Business architecture direction, target state, roadmap | `enterprise-architecture` |
+| Concrete solution design, NFRs, integrations, deployment view, ADRs | `solution-architecture` |
 | Software design, Clean Architecture, Clean Coding | `software-architecture` |
 | Deep DDD, bounded contexts, aggregates, event storming | `domain-driven-design` |
 | Security design, threats, controls, residual risk | `enterprise-security-architecture` |
@@ -691,19 +756,21 @@ Use this decision guide:
 If a task crosses skills:
 
 1. Use `enterprise-architecture` for business/target/roadmap structure.
-2. Use `azure-architecture` for Azure platform, landing zone, governance,
+2. Use `solution-architecture` for concrete end-to-end solution design,
+   integrations, quality attributes, deployment view, ADRs, and build roadmap.
+3. Use `azure-architecture` for Azure platform, landing zone, governance,
    workload architecture, and Azure execution routing.
-3. Use `dotnet-engineering` for .NET implementation, ASP.NET Core, EF Core,
+4. Use `dotnet-engineering` for .NET implementation, ASP.NET Core, EF Core,
    testing, performance, modernization, and Azure SDK integration.
-4. Use `domain-driven-design` for deep domain modeling, bounded contexts,
+5. Use `domain-driven-design` for deep domain modeling, bounded contexts,
    aggregates, event storming, and context maps.
-5. Use `software-architecture` for system/service design, Clean Architecture,
+6. Use `software-architecture` for system/service design, Clean Architecture,
    Clean Coding, integration, ADRs, and Clean AI design boundaries.
-6. Use `enterprise-security-architecture` for security-specific review,
+7. Use `enterprise-security-architecture` for security-specific review,
    controls, and AI security.
-7. Use `mournival-architecture` for final governance decision when evidence,
+8. Use `mournival-architecture` for final governance decision when evidence,
    risk, value, and approval must be separated.
-8. Use `skill-author` when the task is about the skills themselves: new skill
+9. Use `skill-author` when the task is about the skills themselves: new skill
    repos, skill contracts, evidence rules, validation, release, or Superrepo
    catalog maintenance.
 
@@ -721,6 +788,7 @@ Install all current domain skills:
 npx -y skills add MartinEgli/enterprise-architecture-skill --skill * -a codex --yes
 npx -y skills add MartinEgli/azure-architecture-skill --skill * -a codex --yes
 npx -y skills add MartinEgli/dotnet-engineering-skill --skill * -a codex --yes
+npx -y skills add MartinEgli/solution-architecture-skill --skill * -a codex --yes
 npx -y skills add MartinEgli/domain-driven-design-skill --skill * -a codex --yes
 npx -y skills add MartinEgli/software-architecture-skill --skill * -a codex --yes
 npx -y skills add MartinEgli/enterprise-security-architecture-skill --skill * -a codex --yes
@@ -747,6 +815,7 @@ npx -y skills add MartinEgli/skill-author-skill --skill * -a codex --yes
 - `single-skill-template` -> `https://github.com/MartinEgli/single-skill-template.git`
 - `mournival-architecture-skill` -> `https://github.com/MartinEgli/mournival-architecture-skill.git`
 - `software-architecture-skill` -> `https://github.com/MartinEgli/software-architecture-skill.git`
+- `solution-architecture-skill` -> `https://github.com/MartinEgli/solution-architecture-skill.git`
 
 ## Clone
 
