@@ -27,17 +27,17 @@ available.
 
 | Agent Image | Skill |
 | --- | --- |
-| <img src="../azure-architecture-skill/skills/azure-architecture/assets/azure-architecture-small.svg" width="48" height="48" alt="Azure Architecture icon"> | `azure-architecture` |
-| <img src="../dotnet-engineering-skill/skills/dotnet-engineering/assets/dotnet-engineering-small.svg" width="48" height="48" alt=".NET Engineering icon"> | `dotnet-engineering` |
-| <img src="../enterprise-architecture-skill/skills/enterprise-architecture/assets/enterprise-architecture-small.svg" width="48" height="48" alt="Enterprise Architecture icon"> | `enterprise-architecture` |
-| <img src="../enterprise-security-architecture-skill/skills/enterprise-security-architecture/assets/enterprise-security-architecture-small.svg" width="48" height="48" alt="Enterprise Security Architecture icon"> | `enterprise-security-architecture` |
-| <img src="../software-architecture-skill/skills/software-architecture/assets/software-architecture-small.svg" width="48" height="48" alt="Software Architecture icon"> | `software-architecture` |
-| <img src="../domain-driven-design-skill/skills/domain-driven-design/assets/domain-driven-design-small.svg" width="48" height="48" alt="Domain-Driven Design icon"> | `domain-driven-design` |
-| <img src="../mournival-architecture-skill/skills/mournival-architecture/assets/mournival-architecture-small.svg" width="48" height="48" alt="Mournival Architecture icon"> | `mournival-architecture` |
-| <img src="../solution-architecture-skill/skills/solution-architecture/assets/solution-architecture-small.svg" width="48" height="48" alt="Solution Architecture icon"> | `solution-architecture` |
-| <img src="../skill-author-skill/skills/skill-author/assets/skill-author-small.svg" width="48" height="48" alt="Skill Author icon"> | `skill-author` |
-| <img src="../caveman-skill/plugins/caveman/assets/caveman-small.svg" width="48" height="48" alt="Caveman icon"> | `caveman` and helper skills |
-| <img src="../single-skill-template/skills/example-skill/assets/example-skill-small.svg" width="48" height="48" alt="Example Skill icon"> | `example-skill` template |
+| ![Azure Architecture](../azure-architecture-skill/skills/azure-architecture/assets/azure-architecture-small.svg) | `azure-architecture` |
+| ![.NET Engineering](../dotnet-engineering-skill/skills/dotnet-engineering/assets/dotnet-engineering-small.svg) | `dotnet-engineering` |
+| ![Enterprise Architecture](../enterprise-architecture-skill/skills/enterprise-architecture/assets/enterprise-architecture-small.svg) | `enterprise-architecture` |
+| ![Enterprise Security Architecture](../enterprise-security-architecture-skill/skills/enterprise-security-architecture/assets/enterprise-security-architecture-small.svg) | `enterprise-security-architecture` |
+| ![Software Architecture](../software-architecture-skill/skills/software-architecture/assets/software-architecture-small.svg) | `software-architecture` |
+| ![Domain-Driven Design](../domain-driven-design-skill/skills/domain-driven-design/assets/domain-driven-design-small.svg) | `domain-driven-design` |
+| ![Mournival Architecture](../mournival-architecture-skill/skills/mournival-architecture/assets/mournival-architecture-small.svg) | `mournival-architecture` |
+| ![Solution Architecture](../solution-architecture-skill/skills/solution-architecture/assets/solution-architecture-small.svg) | `solution-architecture` |
+| ![Skill Author](../skill-author-skill/skills/skill-author/assets/skill-author-small.svg) | `skill-author` |
+| ![Caveman](../caveman-skill/plugins/caveman/assets/caveman-small.svg) | `caveman` and helper skills |
+| ![Example Skill](../single-skill-template/skills/example-skill/assets/example-skill-small.svg) | `example-skill` template |
 
 ## Azure Architecture
 
