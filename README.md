@@ -92,6 +92,56 @@ Each architecture skill now follows the same gap-closing rules:
 This borrows the useful Caveman discipline without importing Caveman behavior:
 short scoped changes, proof via receipt, and no unrelated refactors.
 
+## Skill Quality Tests
+
+The superrepo contains repeatable quality tests for all realized skills except
+`caveman-skill`, which is intentionally evaluated separately because it has a
+different communication-mode purpose.
+
+Run the quality tests:
+
+```powershell
+npm test
+```
+
+Generate the current quality assessment table:
+
+```powershell
+npm run quality
+```
+
+The tests check:
+
+- required `SKILL.md` contract sections
+- concrete trigger description and do-not-use boundaries
+- evidence, traceability, assumptions, gaps, and Evidence Receipt support
+- `agents/openai.yaml`
+- linked references and reusable assets
+- actionable slash modes
+- handoffs and diagram scope
+
+Current assessment:
+
+| Repo | Skill | Type | Score | Main Gaps |
+| --- | --- | --- | ---: | --- |
+| `azure-architecture-skill` | `azure-architecture` | realized | 100 | None |
+| `domain-driven-design-skill` | `domain-driven-design` | realized | 98 | Trigger/boundary wording can be slightly sharper. |
+| `dotnet-engineering-skill` | `dotnet-engineering` | realized | 100 | None |
+| `enterprise-architecture-skill` | `enterprise-architecture` | realized | 100 | None |
+| `enterprise-security-architecture-skill` | `enterprise-security-architecture` | realized | 98 | Trigger/boundary wording can be slightly sharper. |
+| `mournival-architecture-skill` | `mournival-architecture` | realized | 95 | Trigger/boundary wording and mode actionability can be sharpened. |
+| `skill-author-skill` | `skill-author` | realized | 94 | Diagram-scope wording should clarify that it governs other skills, not its own diagram output. |
+| `software-architecture-skill` | `software-architecture` | realized | 100 | None |
+| `solution-architecture-skill` | `solution-architecture` | realized | 100 | None |
+| `single-skill-template` | `example-skill` | template | 84 | Template is assessed separately; it should gain default `agents/openai.yaml` support. |
+
+Interpretation:
+
+- `95-100`: production-ready contract.
+- `90-94`: production-ready with minor authoring polish.
+- `85-89`: usable but should be improved before adding more capabilities.
+- `<85`: block release for realized skills until quality gaps are fixed.
+
 Handoff map:
 
 | From | Hand Off To | When |
