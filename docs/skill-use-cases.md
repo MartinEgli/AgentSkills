@@ -19,19 +19,23 @@ Do not convert assumptions into evidence. For reviews, diagrams, decisions, or
 recommendations, include an Evidence Receipt when it materially helps the user
 understand where conclusions came from.
 
-## Continuous Improvement Rule For All Skills
+## Auditable Skill Feedback Loop Rule For All Skills
 
-Skills are self-improving only through a controlled feedback route. Use the
-skill-specific `/<skill> feedback` mode to capture lessons and `/<skill>
-improve` to propose changes. A proposed improvement must show evidence,
-assumptions, gaps, risks, affected files, validation commands, versioning impact,
-and rollback considerations before behavior changes are applied.
+Skills are self-improving only through the **Auditable Skill Feedback Loop**
+(ASFL). Use the skill-specific `/<skill> feedback` mode to capture lessons and
+`/<skill> improve` to propose changes. A proposed improvement must show
+evidence, assumptions, gaps, risks, affected files, validation commands,
+versioning impact, and rollback considerations before behavior changes are
+applied.
 
 Required artifacts in realized skill repos and the template:
 
 - `references/feedback-route.md`
 - `references/improvement-backlog.md`
 - `assets/improvement-proposal-template.md`
+
+See [Auditable Skill Feedback Loop](auditable-skill-feedback-loop.md) for the
+concept, scope, and verification criteria.
 
 ## Agent Images
 

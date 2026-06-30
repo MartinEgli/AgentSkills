@@ -94,10 +94,10 @@ changes, follow the skill's trigger and do-not-use boundaries, preserve evidence
 and traceability, and update this README when skill usage, roles, modes,
 handoffs, outputs, or installation guidance changes.
 
-## Continuous Skill Improvement
+## Auditable Skill Feedback Loop
 
-Realized skills and the `single-skill-template` use an auditable feedback loop
-instead of hidden self-modification:
+Realized skills and the `single-skill-template` use the **Auditable Skill
+Feedback Loop** (ASFL) instead of hidden self-modification:
 
 ```text
 feedback -> evidence -> improvement proposal -> feature branch -> validation ->
@@ -121,6 +121,9 @@ The shared artifacts are:
 - `references/feedback-route.md`
 - `references/improvement-backlog.md`
 - `assets/improvement-proposal-template.md`
+
+See [Auditable Skill Feedback Loop](docs/auditable-skill-feedback-loop.md) for
+the short concept, scope, and verification criteria.
 
 ## Reference Map
 
