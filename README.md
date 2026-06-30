@@ -94,6 +94,34 @@ changes, follow the skill's trigger and do-not-use boundaries, preserve evidence
 and traceability, and update this README when skill usage, roles, modes,
 handoffs, outputs, or installation guidance changes.
 
+## Continuous Skill Improvement
+
+Realized skills and the `single-skill-template` use an auditable feedback loop
+instead of hidden self-modification:
+
+```text
+feedback -> evidence -> improvement proposal -> feature branch -> validation ->
+commit -> push -> version or changelog update when needed
+```
+
+Use each skill's `/<skill> feedback` mode to capture lessons from a run. Use
+`/<skill> improve` to propose concrete changes with evidence, affected files,
+risks, validation commands, versioning impact, and rollback considerations.
+
+Every applied improvement must preserve:
+
+- exact user facts, paths, commands, source labels, and examples
+- separation of evidence, inference, assumption, and gap
+- rejected, deferred, and routed ideas in the backlog or proposal trail
+- validation evidence before merge
+- feature-branch workflow before updating `main`
+
+The shared artifacts are:
+
+- `references/feedback-route.md`
+- `references/improvement-backlog.md`
+- `assets/improvement-proposal-template.md`
+
 ## Reference Map
 
 These references help position the skills. They are not copied into the skills

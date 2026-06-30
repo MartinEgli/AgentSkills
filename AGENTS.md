@@ -48,6 +48,29 @@ For every meaningful change:
 Evidence and traceability are mandatory for all realized skills and templates.
 Every skill must keep its evidence rules current as the skill evolves.
 
+## Continuous Skill Improvement Policy
+
+Skills may become self-improving only through an explicit, auditable feedback
+loop. Do not let a skill silently rewrite its own behavior from a single run.
+
+Required loop:
+
+1. Capture feedback with `/<skill> feedback`.
+2. Classify user feedback, observed gaps, assumptions, rejected ideas, deferred
+   ideas, and routed follow-ups.
+3. Create an improvement proposal with evidence, affected files, risk,
+   validation, versioning impact, and rollback considerations.
+4. Apply changes on a feature branch.
+5. Run the skill repo validation and tests.
+6. Commit and push the skill repo.
+7. Update the AgentSkills submodule pointer and documentation.
+
+Every realized skill and the `single-skill-template` should maintain:
+
+- `references/feedback-route.md`
+- `references/improvement-backlog.md`
+- `assets/improvement-proposal-template.md`
+
 When creating or modifying a skill:
 
 - Keep `SKILL.md` Evidence Handling aligned with the actual inputs, outputs,

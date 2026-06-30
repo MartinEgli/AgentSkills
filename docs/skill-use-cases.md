@@ -19,6 +19,20 @@ Do not convert assumptions into evidence. For reviews, diagrams, decisions, or
 recommendations, include an Evidence Receipt when it materially helps the user
 understand where conclusions came from.
 
+## Continuous Improvement Rule For All Skills
+
+Skills are self-improving only through a controlled feedback route. Use the
+skill-specific `/<skill> feedback` mode to capture lessons and `/<skill>
+improve` to propose changes. A proposed improvement must show evidence,
+assumptions, gaps, risks, affected files, validation commands, versioning impact,
+and rollback considerations before behavior changes are applied.
+
+Required artifacts in realized skill repos and the template:
+
+- `references/feedback-route.md`
+- `references/improvement-backlog.md`
+- `assets/improvement-proposal-template.md`
+
 ## Agent Images
 
 The documentation uses the checked-in skill icon assets as agent images. These
