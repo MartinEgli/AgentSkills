@@ -48,10 +48,11 @@ For every meaningful change:
 Evidence and traceability are mandatory for all realized skills and templates.
 Every skill must keep its evidence rules current as the skill evolves.
 
-## Continuous Skill Improvement Policy
+## Auditable Skill Feedback Loop Policy
 
-Skills may become self-improving only through an explicit, auditable feedback
-loop. Do not let a skill silently rewrite its own behavior from a single run.
+Skills may become self-improving only through the **Auditable Skill Feedback
+Loop** (ASFL). Do not let a skill silently rewrite its own behavior from a
+single run.
 
 Required loop:
 
@@ -70,6 +71,9 @@ Every realized skill and the `single-skill-template` should maintain:
 - `references/feedback-route.md`
 - `references/improvement-backlog.md`
 - `assets/improvement-proposal-template.md`
+
+The concept definition and verification criteria live in
+`docs/auditable-skill-feedback-loop.md`.
 
 When creating or modifying a skill:
 
